@@ -1,0 +1,203 @@
+@import'../../../app.component.css';
+
+.home {}
+
+/* .main-card {
+   background-color: #64748d15;
+   padding-bottom: 3vh;
+} */
+
+.banner-card {
+   height: 30vh;
+}
+
+
+@media (min-width: 576px) and (max-width:991.98px) {
+   .home {
+      display: none;
+   }
+}
+
+
+@media (min-width: 992px) {
+
+   .home {}
+
+   .banner-card {
+      height: 85vh !important;
+      max-width: 100% !important;
+   }
+
+   .side-banner {
+      height: 600px;
+      background-color: rgba(255, 250, 241, 0.922);
+      padding-top: 50px;
+      padding-bottom: 50px;
+   }
+
+   .side-banner img {
+      height: 85%;
+   }
+
+   .title h2 {
+      color: rgb(63, 98, 167);
+      font-size: 38px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 60px;
+   }
+
+   .title h2 span {
+      color: rgb(239, 104, 51);
+      font-weight: bold !important;
+   }
+
+   .title p {
+      color: #000;
+      font-size: 16px;
+      line-height: 28px;
+   }
+
+   .title .p2 {
+      color: #000;
+      font-size: 16px;
+      margin-top: 30px;
+      line-height: 28px;
+   }
+   .text-center{
+      text-align: center;
+   }
+
+   .our-program {
+      background-color: rgb(242, 250, 255);
+      padding-top: 30px;
+      padding-bottom: 50px;
+   }
+
+   /* .our-program h2 {
+      color: rgb(63, 98, 167);
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      margin-bottom: 55px;
+   }
+
+   .our-program h2 span {
+      color: rgb(239, 104, 51);
+   } */
+
+   .our-program .program-card {
+      height: 400px;
+      width: 295px;
+      border-radius: 20px;
+      justify-content: center;
+      padding: 15px;
+      margin-top: 40px;
+   }
+   .white-color{
+      color: #fff !important;
+   }
+   .our-program .card1-color {
+      background-color: rgba(239, 55, 101, 0.953);
+   }
+
+   .our-program .card2-color {
+      background-color: rgba(238, 166, 24, 0.888);
+   }
+
+   .our-program .card3-color {
+      background-color: rgba(32, 131, 5, 0.759);
+   }
+
+   .our-program .card4-color {
+      background-color: rgb(62, 162, 225);
+   }
+
+   .our-program .program-card .card-img-circle {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed #fff;
+      border-radius: 50%;
+      margin-top: 35px;
+   }
+
+   .our-program .program-card .card-img-circle img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-left: -3.5px;
+      margin-top: 9px;
+   }
+
+   .our-program .program-card h3 {
+      color: #fff;
+      font-size: 26px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      font-weight: 400;
+   }
+
+   .our-program .program-card p {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 25px;
+      line-height: 25px;
+   }
+
+   .trade-parter{
+      max-height: 70vh;
+      background-color: #3172bb;
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 0 !important;
+   }
+   .trade-parter img{
+      height: 55%;
+   }
+   .growth-story{
+      background-color: #fff;
+      max-height: 50vh;
+   }
+   .growth-story img{
+      height:60%;
+   }
+   .franchise-opportunity{
+      background-color: #f7f7f7;
+      height: 68vh;
+      max-height: 68vh;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+   }
+   .franchise-opportunity img{
+      height: 68vh;
+   }
+   .franchise-opportunity h4{
+      color: #000;
+      font-family:'Menlo';
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .5px;
+   }
+   .awards{
+      height: 100vh;
+      max-height: 100vh;
+      padding-top: 5vh;
+   }
+   .awards .award-carousel{
+      padding-top: 10px !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      padding-bottom: 50px !important;
+   }
+   .awards img{
+      width: 155px !important;
+      height: 155px !important;
+   }
+
+   .owl-carousel .animated { 
+      animation-duration: 1000ms;
+      animation-fill-mode: both; }
+}
