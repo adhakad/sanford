@@ -17,24 +17,34 @@
       <span class="menu-item" [routerLink]="['/']">Home</span>
     </button> -->
     <button #button mat-button [matMenuTriggerFor]="aboutMenu">
-      <div style="height: 5px;background-color: rgba(6, 0, 179, 0.693);width: 125px;margin-left:-10px;border-radius: 5px;"></div>
+      <div
+        style="height: 5px;background-color: rgba(6, 0, 179, 0.693);width: 125px;margin-left:-10px;border-radius: 5px;">
+      </div>
       <span class="menu-item" style="font-family:Menlo">About Us</span><mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <button #button mat-button [matMenuTriggerFor]="aboutMenu">
-      <div style="height: 5px;background-color: rgba(33, 150, 0, 0.759);width: 125px;margin-left:-10px;border-radius: 5px;"></div>
+      <div
+        style="height: 5px;background-color: rgba(33, 150, 0, 0.759);width: 125px;margin-left:-10px;border-radius: 5px;">
+      </div>
       <span class="menu-item" style="font-family:Menlo">Our System</span><mat-icon>keyboard_arrow_down</mat-icon>
     </button>
-    
+
     <button #button mat-button>
-      <div style="height: 5px;background-color: rgba(255, 137, 20, 0.888);width: 125px;margin-left:-10px;border-radius: 5px;"></div>
+      <div
+        style="height: 5px;background-color: rgba(255, 137, 20, 0.888);width: 125px;margin-left:-10px;border-radius: 5px;">
+      </div>
       <span class="menu-item" style="font-family:Menlo">Admissions</span>
     </button>
     <button #button mat-button>
-      <div style="height: 5px;background-color: rgba(255, 3, 163, 0.953);width: 125px;margin-left:-10px;border-radius: 5px;"></div>
+      <div
+        style="height: 5px;background-color: rgba(255, 3, 163, 0.953);width: 125px;margin-left:-10px;border-radius: 5px;">
+      </div>
       <span class="menu-item" style="font-family:Menlo">Franchise</span>
     </button>
     <button #button mat-button [matMenuTriggerFor]="aboutMenu">
-      <div style="height: 5px;background-color: rgba(255, 184, 20, 0.888);width: 125px;margin-left:-10px;border-radius: 5px;"></div>
+      <div
+        style="height: 5px;background-color: rgba(255, 184, 20, 0.888);width: 125px;margin-left:-10px;border-radius: 5px;">
+      </div>
       <span class="menu-item" style="font-family:Menlo">Contact Us</span><mat-icon>keyboard_arrow_down</mat-icon>
     </button>
   </div>
@@ -222,7 +232,7 @@
               <ng-container>
                 <h3>Academic Info</h3>
               </ng-container>
-              
+
               <div class="col-12 col-lg-6">
                 <mat-form-field appearance="outline">
                   <mat-label>Session</mat-label>
@@ -242,8 +252,7 @@
                   <mat-label>Class Applied for</mat-label>
                   <mat-select matInput formControlName="class">
                     <div *ngFor="let classInfo of classInfo">
-                      <mat-option [value]="classInfo.class"
-                        (click)="chooseClass(studentForm.get('class'))">
+                      <mat-option [value]="classInfo.class" (click)="chooseClass(studentForm.get('class'))">
                         {{ classInfo.class | classSuffix }}
                       </mat-option>
                     </div>
@@ -252,8 +261,7 @@
                     *ngIf="studentForm.get('class')?.hasError('required') && studentForm.get('class')?.touched">
                     Class is required
                   </mat-error>
-                  <mat-error
-                    *ngIf="studentForm.get('class')?.hasError('pattern') && studentForm.get('class')?.touched">
+                  <mat-error *ngIf="studentForm.get('class')?.hasError('pattern') && studentForm.get('class')?.touched">
                     Please enter a valid class (numeric characters only)
                   </mat-error>
                 </mat-form-field>
@@ -306,12 +314,10 @@
                 <mat-form-field appearance="outline">
                   <mat-label>Name</mat-label>
                   <input matInput type="text" formControlName="name">
-                  <mat-error
-                    *ngIf="studentForm.get('name')?.hasError('required') && studentForm.get('name')?.touched">
+                  <mat-error *ngIf="studentForm.get('name')?.hasError('required') && studentForm.get('name')?.touched">
                     Name is required
                   </mat-error>
-                  <mat-error
-                    *ngIf="studentForm.get('name')?.hasError('pattern') && studentForm.get('name')?.touched">
+                  <mat-error *ngIf="studentForm.get('name')?.hasError('pattern') && studentForm.get('name')?.touched">
                     Please enter a valid Name (only letters and spaces are allowed)
                   </mat-error>
                 </mat-form-field>
@@ -322,8 +328,7 @@
                   <input matInput readonly [matDatepicker]="picker" formControlName="dob" />
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
-                  <mat-error
-                    *ngIf="studentForm.get('dob')?.hasError('required') && studentForm.get('dob')?.touched">
+                  <mat-error *ngIf="studentForm.get('dob')?.hasError('required') && studentForm.get('dob')?.touched">
                     Date of Birth is required
                   </mat-error>
                 </mat-form-field>
@@ -444,8 +449,7 @@
                   <mat-label>Father Qualification</mat-label>
                   <mat-select type="text" matInput formControlName="fatherQualification">
                     <div *ngFor="let qualification of qualifications">
-                      <mat-option
-                        value="{{qualification.qualification}}">{{qualification.qualification}}</mat-option>
+                      <mat-option value="{{qualification.qualification}}">{{qualification.qualification}}</mat-option>
                     </div>
                   </mat-select>
                   <mat-error
@@ -511,8 +515,7 @@
                   <mat-label>Mother Qualification</mat-label>
                   <mat-select type="text" matInput formControlName="motherQualification">
                     <div *ngFor="let qualification of qualifications">
-                      <mat-option
-                        value="{{qualification.qualification}}">{{qualification.qualification}}</mat-option>
+                      <mat-option value="{{qualification.qualification}}">{{qualification.qualification}}</mat-option>
                     </div>
                   </mat-select>
                   <mat-error

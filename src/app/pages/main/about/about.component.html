@@ -1,89 +1,354 @@
 <app-header></app-header>
-<div class="container-fluid">
+<div class="home">
   <div class="row">
-    <div class="col-12 col-lg-8 offset-lg-2 big-container">
-      <div class="col-lg-10 offset-lg-1">
-        <div class="main-card">
-          <h3 style="text-align: center;margin-bottom: 10vh;">About school</h3>
-          <ng-container *ngIf="schoolInfo">
-            <p>Inspiring Minds, Shaping Futures</p>
-            <h3>Introduction</h3>
-            <p>Welcome to {{schoolInfo?.schoolName}}, a distinguished institution with a rich legacy of educational
-              excellence that has been serving the community since its inception in
-              {{schoolInfo?.foundedYear}}. Our journey in education is guided by a steadfast commitment to providing an
-              exceptional
-              learning environment where every student is empowered to thrive academically, socially, and morally.</p>
-            <h3>Schooling Medium - {{schoolInfo?.medium | titlecase}} Medium</h3>
-            <p>{{schoolInfo?.schoolName}} is proud to offer education in {{schoolInfo?.medium | titlecase}} medium,
-              recognizing the diverse linguistic needs of our students. Our commitment to excellence extends to both
-              sections, ensuring a comprehensive and inclusive learning experience for all.</p>
-            <h3>Our Vision</h3>
-            <p>Our vision at {{schoolInfo?.schoolName}} is deeply rooted in our aspiration to empower young minds and
-              mold them into responsible global citizens. Drawing inspiration from various educational philosophies, we
-              are dedicated to creating an educational space that fosters intellectual curiosity, nurtures creativity,
-              and instills values that transcend the classroom.</p>
-            <h3>Why Choose {{schoolInfo?.schoolName}}?</h3>
-            <p>Our pursuit of academic excellence is underpinned by a curriculum that seamlessly blends traditional
-              wisdom with contemporary pedagogical approaches. Our accomplished faculty members, many of whom hold
-              advanced degrees from renowned institutions, are committed to providing an intellectually stimulating
-              atmosphere. Education extends beyond textbooks, and we offer a wide spectrum of co-curricular activities,
-              sports, and counseling services designed to cultivate well-rounded individuals who are equipped to face
-              life's challenges. Our educational philosophy is deeply influenced by the ideals of integrity, empathy,
-              and respect for diversity. Our aim is to nurture students who not only excel academically but also embody
-              these principles in their daily lives. Our campus boasts state-of-the-art facilities, reflecting our
-              commitment to providing students with a conducive learning environment. From well-equipped classrooms to
-              advanced laboratories, expansive libraries, and modern recreational areas, every aspect of our campus is
-              designed to enhance the learning experience. In an increasingly interconnected world, we prepare our
-              students for global citizenship through cultural exchange programs and exposure to diverse perspectives,
-              cultivating an international outlook.
-            </p>
-            <h3>Our Core Values</h3>
-            <p>We uphold the ideals of relentless pursuit of excellence, integrity, mutual respect among individuals,
-              and innovation in teaching and learning. Our students are encouraged to think critically, adapt to change,
-              and embrace creativity as they prepare to navigate an ever-evolving world. {{schoolInfo?.schoolName}} is
-              not merely an educational institution; it is a close-knit community of learners. Parents, teachers, and
-              students collaborate harmoniously to create a supportive and nurturing environment.
-            </p>
-            <ng-container *ngIf="schoolInfo?.schoolTrust">
-              <h3>Trustee Message</h3>
-              <p>A heartfelt welcome to {{schoolInfo?.schoolName}}, a beacon of educational excellence under the
-                guidance of the {{schoolInfo?.schoolTrust | titlecase}}. Our trust, comprised of dedicated trustees, is committed to
-                steering
-                this institution towards the pinnacle of academic achievement and holistic development. As the
-                custodians
-                of our school's values, {{schoolInfo?.schoolTrust | titlecase}} ensures a transparent, innovative, and inclusive
-                educational
-                environment.
-                Drawing from a rich tapestry of experience and expertise, the trustees at {{schoolInfo?.schoolTrust | titlecase}}
-                collaborate
-                harmoniously with educators, parents, and students. Together, we strive to nurture young minds,
-                instilling
-                a sense of responsibility and global citizenship.
-                At the heart of our trust's vision is the relentless pursuit of excellence, integrity, and respect for
-                diversity. {{schoolInfo?.schoolTrust | titlecase}} is not merely a governing body; it is a vital force propelling Shri
-                Banke
-                Bihari Convent School toward a future where every student is empowered to thrive academically, socially,
-                and morally.
-                Joining the {{schoolInfo?.schoolName}} family means becoming a part of the {{schoolInfo?.schoolTrust | titlecase}}'s
-                commitment to inspiring minds and shaping futures. We eagerly anticipate the privilege of providing your
-                child with a transformative and empowering education.
-                Thank you for considering {{schoolInfo?.schoolName}} and the {{schoolInfo?.schoolTrust | titlecase}} for your child's
-                educational journey. Together, let us embark on a path of learning, growth, and success.</p>
-            </ng-container>
-            <h3>Join the {{schoolInfo?.schoolName}} Family</h3>
-            <p>We cordially invite you and your child to become part of the {{schoolInfo?.schoolName}} family. Together,
-              we embark on an enriching educational journey. Explore our website to delve deeper into our programs,
-              admission procedures, and the vibrant life at {{schoolInfo?.schoolName}}.</p>
-            <p>Thank you for considering {{schoolInfo?.schoolName}} as your partner in your child's educational journey.
-              We eagerly anticipate the privilege of providing your child with a transformative and empowering
-              education.</p>
-          </ng-container>
+    <div class="main-card">
+      <div class="container-fluid side-banner">
+        <div class="row container-section">
+          <div class="col-6">
+            <div class="col-10 offset-2 title">
+              <h2>ABOUT <span>SANFORD</span></h2>
+              <p>SANFORT – Group Of Schools is a brainchild of husband-wife duo S. K. Rathor & Kavita Rathor. They laid
+                the foundation of their first preschool in 1999 with a bouquet of attraction, concepts, and role-play
+                models for tiny tots based on the ‘play-way’ methodology or ‘learning by doing. After more than 10 years
+                of rich experience in the field, they launched their school brand SANFORT in December 2009 based on the
+                U. K. Concept of preschool education. </p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-11 offset-1">
+                <div class="row">
+                  <div class="col-8">
+                    <img src="../../../../assets/about/about1.jpg" alt="" style="border-radius: 0 0 0 40px;">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row container-section">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-9">
+                <img src="../../../../assets/about/about2.jpg" alt="" style="border-radius: 0 40px 0 0;">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="col-10 title">
+              <p>SANFORT curriculum involves effective, time-tested elements of traditional learning infused with
+                cutting-edge technology resources, which bridges the learning gap. The curriculum is crafted in the
+                hexagram of ‘Core Value Circle’ which helps children in the Refinement of their senses, Gross Motor
+                Development, Creative Development, Social Development, Psychological/ Personality Development, and
+                Practical life care for Self, Others, and the Environment. The classrooms are set up with world-class
+                technology-enabled teaching tools to make teaching more interesting and effective. Children play on the
+                large touch panels with the specially designed software and simultaneously learn alphabets, numbers,
+                shapes, and many more. The children are taken in an ordered manner through the day to be able to give
+                them a sense of routine to help them settle in a new environment in prospect. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row container-section">
+          <div class="col-6">
+            <div class="col-10 offset-2 title">
+              <p>SANFORT – Group Of Schools is a brainchild of husband-wife duo S. K. Rathor & Kavita Rathor. They laid
+                the foundation of their first preschool in 1999 with a bouquet of attraction, concepts, and role-play
+                models for tiny tots based on the ‘play-way’ methodology or ‘learning by doing. After more than 10 years
+                of rich experience in the field, they launched their school brand SANFORT in December 2009 based on the
+                U. K. Concept of preschool education. </p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-11 offset-1">
+                <div class="row">
+                  <div class="col-8">
+                    <img src="../../../../assets/about/about3.jpeg" alt="" style="border-radius: 0 0 0 40px;">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div class="container-fluid light-aquamarine-container">
+        <div class="row">
+          <div class="col-12 our-mission-vission">
+            <div class="row">
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-3"></div>
+                  <div class="col-8 offset-1">
+                    <img src="../../../../assets/about/our-mission.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 offset-1 our-mission-card">
+                <div class="col-10 offset-1 title">
+                  <h2>OUR <span>MISSION</span></h2>
+                  <p>Sanfort’s mission is to provide an enriching learning experience to the early learners in their
+                    first steps towards education.</p>
+                  <p class="p2">We strive to create a tranquil, curious and challenging environment that fosters the
+                    social, physical, emotional and cognitive development of the child.</p>
+                  <p class="p2">Our aim is to imbibe social, moral and cultural values in early learners and also to
+                    arouse in them the feeling of respect and concern towards the environment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 our-mission-vission">
+            <div class="row">
+              <div class="col-6 offset-1 our-vission-card">
+                <div class="col-10 offset-1 title">
+                  <h2>OUR <span>VISSION</span></h2>
+                  <p>t’s our vision to nurture today’s learners into tomorrow’s responsible and passionate global
+                    citizens, as these children are going to shape the future of our society tomorrow.</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-3"></div>
+                  <div class="col-8">
+                    <img src="../../../../assets/about/our-vission.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid leadership">
+        <div class="row">
+          <div class="col-5">
+            <div class="row">
+              <div class="col-8 offset-2">
+                <img src="../../../../assets/about/Sir-and-Mam-The-Leadership-Page-1-1568x2843 (1).jpg" alt=""
+                  height="25%">
+              </div>
+            </div>
+          </div>
+          <div class="col-6 title">
+            <h2>THE <span>LEADERSHIP</span></h2>
+            <h3>Dr. S.K Rathor</h3>
+            <p>Entreprenuer, Educator, Motivator</p>
+            <p>Dr. S. K. Rathor is Founder, Chairman & MD of SANFORT Group of Schools. He is Founding President of Early
+              Childhood Care & Development Educator’s Association (ECCDA), a voluntary organisation working for the
+              welfare of early learners, educators, and parents. He is Vice President of Early Childhood Association
+              (ECA) and Chairman-School Education Department, Centre for Education Growth and Research (CEGR). He
+              started his entrepreneurial journey in 1995 with little capital and today he is known as one of the Most
+              Successful Edupreneur in school education.</p>
+            <p>Dr. S. K. Rathor is a well-known name in School Education Sector; he is a TED Speaker and is the most
+              sought-after speaker on education and entrepreneurship in the country. He inspires and encourages
+              thousands of people to realise their true potential and help them to become successful Entrepreneurs. Tens
+              of thousands of parents have been benefitted from his Parenting Workshops “Art of Parenting”.</p>
+            <p>His success story is covered by major mainstream print, electronic & digital media like Times of India,
+              HT, Tribune, Dainik Jagaran, Amar Ujala, ABP News, Zee Business, Times Now. He found a place on the cover
+              of Asia’s leading franchise magazine Franchising World, premium magazines in education and ICT Digital
+              Learning, Silicon India, and Education Today. His story was featured in a web series “Education Evangelist
+              of India” on forbesindia.com. He is decorated with “Entrepreneur of the Year” & “The Most Successful
+              Educationist in Early Childhood Education” awards in the year 2016, “Edupreneur of the Year in the year
+              2017” and “India’s Greatest Leaders 2017-18”, 50 Visionaries Leading Icons in Education 2020 Award by
+              Education Today & Visionary Leader Award ’21 at Global Education & Skill Conclave.</p>
+            <h3>Kavita Rathor</h3>
+            <p>Early Childhood Expert</p>
+            <p>Kavita Rathor, Founder Director of SANFORT Group of Schools did her Masters in Education and is a
+              well-known name in the field of early childhood education. She started her first preschool in the year
+              2000 and after a rich experience of 10 years in the industry in December 2009 she launched her school
+              brand SANFORT based on the U. K. Concept of preschool education, and today SANFORT is one of the most
+              trusted names in the school education in India and neighboring countries.</p>
+            <p>Her success story is featured in many leading newspapers and magazines and was telecasted on Zee
+              Business. She has been awarded as the “Women Entrepreneur of the year 2015 & 2018” and “Edupreneur of the
+              Year 2018” for her contribution in the field of school education.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid core-team">
+        <div class="row">
+          <div class="col-10 offset-1">
+            <div class="row title text-center">
+              <h2>OUR <span>PROGRAMS</span></h2>
+              <div class="col-4 padding">
+                <div class="row program-card light-pink-color" style="border-top: 6px solid rgba(255, 61, 174, 0.953);">
+                  <div class="card-img-circle">
+                    <img src="../../../../assets/about/teacher1.png" alt="">
+                  </div>
+                  <h2>MS. SNEHA RATHOR KHANDELWAL</h2>
+                  <h3>CEO</h3>
+                  <p>Ms. Sneha Rathor a PG researcher in Childhood Studies and Early Year from Leeds Beckett University
+                    and Bachelor in Commerce from Delhi University.</p>
+                </div>
+              </div>
+              <div class="col-4 padding">
+                <div class="row program-card light-skyblue-color" style="border-top: 6px solid rgb(62, 162, 225);">
+                  <div class="card-img-circle">
+                    <img src="../../../../assets/about/teacher3.png" alt="">
+                  </div>
+                  <h2>MR. ABHISHEK RATHOR</h2>
+                  <h3>COO</h3>
+                  <p>Mr. Abhishek Rathor has done his Bachelor Program in Business Administration from Amity University,
+                    Noida. He has opted the specialization in Marketing</p>
+                </div>
+              </div>
+              <div class="col-4 padding">
+                <div class="row program-card light-pink-color" style="border-top: 6px solid rgba(255, 61, 174, 0.953);">
+                  <div class="card-img-circle">
+                    <img src="../../../../assets/about/teacher2.png" alt="">
+                  </div>
+                  <h2>MS. VINEETA SRIVASTAVA</h2>
+                  <h3>CAC</h3>
+                  <p>Mrs. Vineeta Srivastava an alumni of Lucknow University, is M.Sc. (food and Science Technology) &
+                    B. Ed. With over 20 years of experience in the education field</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid extra-light-purpleblue-color padding-top padding-bottom">
+        <div class="row">
+          <div class="col-12 title text-center">
+            <h2>GLOBAL <span>ALLIANCE</span></h2>
+          </div>
+        </div>
+        <div class="row container-section globle-allince">
+          <div class="col-6">
+            <div class="col-10 offset-2 title">
+              <h3>Trinity College Of London</h3>
+              <p>SANFORT is the pioneer preschool chain partnered with TRINITY COLLEGE, LONDON for The Trinity Stars:
+                Young Performers in English Award, designed to encourage the teaching and learning of English language
+                through drama, music and performance for children who are starting to learn English and to offer them an
+                international Certificate at this early age. Preparing children for the award shows how
+                performance-related activity support learning, motivates children and builds their confidence and
+                communication skills. Trinity Stars has been designed to support both learning in the classroom and
+                teachers’ professional development.</p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-10 offset-2">
+                <div class="row">
+                  <div class="col-8">
+                    <img src="../../../../assets/about/Trinity-logo.png" alt="" style="border-radius: 0 40px 0 40px;">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid extra-light-green-color padding-top padding-bottom">
+        <div class="row container-section globle-allince ">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-10 offset-2">
+                <div class="row">
+                  <div class="col-8">
+                    <img src="../../../../assets/about/British-logo.png" alt="" style="border-radius: 0 40px 0 40px;">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="col-10 offset-0 title">
+              <h3>British Association Of Early Childhood Education</h3>
+              <p>SANFORT is Member of “British Association of Early Childhood Education” – U.K. This helps SANFORT
+                getting regular updates on the innovation in early education and trainings from both of these
+                organizations time to time. British Association for Early Childhood Education is the leading
+                orgnisationbased in United Kingdom working for over 90 years on the curriculum and educators who
+                understand and are able to implement the individual learning of each unique child.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="container-fluid extra-light-purpleblue-color padding-top padding-bottom">
+        <div class="row container-section globle-allince">
+          <div class="col-6">
+            <div class="col-10 offset-2 title">
+              <h3>Trinity College Of London</h3>
+              <p>SANFORT is the pioneer preschool chain partnered with TRINITY COLLEGE, LONDON for The Trinity Stars:
+                Young Performers in English Award, designed to encourage the teaching and learning of English language
+                through drama, music and performance for children who are starting to learn English and to offer them an
+                international Certificate at this early age. Preparing children for the award shows how
+                performance-related activity support learning, motivates children and builds their confidence and
+                communication skills. Trinity Stars has been designed to support both learning in the classroom and
+                teachers’ professional development.</p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-10 offset-2">
+                <div class="row">
+                  <div class="col-8">
+                    <img src="../../../../assets/about/Preschool-Learning.png" alt=""
+                      style="border-radius: 0 40px 0 40px;">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid growth-story">
+        <div class="row">
+          <div class="col-6 offset-3 title text-center mt-4">
+            <h2>THE <span>JOURNEY</span></h2>
+          </div>
+          <div class="col-8 offset-1 mt-2">
+            <img src="../../../../assets/Growth-story.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid awards">
+        <div class="row">
+            <div class="col-10 offset-1 title text-center">
+                <h2>AWARDS & <span>ACCOLADES</span></h2>
+            </div>
+            <div class="col-6 offset-3 title text-center">
+                <p>The hard work and dedication of our team of more than 3000 passionate people nurturing
+                    young children is well appreciated by parents, media and government in India & abroad.</p>
+            </div>
+            <div class="col-10 offset-1">
+                <div class="owl-carousel award-carousel">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                </div>
+            </div>
+            <div class="col-10 offset-1 title text-center">
+                <h2 class="mt-4">FEATURED <span>IN</span></h2>
+            </div>
+            <div class="col-10 offset-1">
+                <div class="owl-carousel award-carousel">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                    <img src="../../../../assets/award1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
   </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>
 <div class="spinner-container" *ngIf="loader">
   <div class="spinner-overlay" *ngIf="loader">
     <mat-progress-spinner *ngIf="loader" diameter="65" mode="indeterminate" strokeWidth="3"></mat-progress-spinner>
