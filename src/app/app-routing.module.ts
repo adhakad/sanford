@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'programs', loadChildren: () => import('src/app/pages/main/our-system/programs/programs.module').then((module) => module.ProgramsModule) },
   { path: 'events-celebrations', loadChildren: () => import('src/app/pages/main/our-system/events-celebrations/events-celebrations.module').then((module) => module.EventsCelebrationsModule) },
   { path: 'facilities', loadChildren: () => import('src/app/pages/main/our-system/facilities/facilities.module').then((module) => module.FacilitiesModule) },
-  { path: 'safety-higiene', loadChildren: () => import('src/app/pages/main/our-system/safety-higiene/safety-higiene.module').then((module) => module.SafetyHigieneModule) },
+  { path: 'safety-hygiene', loadChildren: () => import('src/app/pages/main/our-system/safety-higiene/safety-higiene.module').then((module) => module.SafetyHigieneModule) },
   { path: 'teachers', loadChildren: () => import('src/app/pages/main/our-system/teachers/teachers.module').then((module) => module.TeachersModule) },
   { path: 'parents-connect', loadChildren: () => import('src/app/pages/main/our-system/parents-connect/parents-connect.module').then((module) => module.ParentsConnectModule) },
   { path: 'admissions', loadChildren: () => import('src/app/pages/main/admissions/admissions.module').then((module) => module.AdmissionsModule) },

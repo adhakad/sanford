@@ -8,7 +8,7 @@
     color: #000;
     font-size: 18px;
     line-height: 25px;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 .list-points p{
     color: #000;
@@ -17,5 +17,31 @@
     line-height: 25px;
 }
 .our-program img{
-    margin-top: 100px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    .our-program h3{
+        color:#000;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .our-program p{
+        color: #000;
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 25px;
+    }
+    .list-points p{
+        color: #000;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+    }
+    .our-program img{
+        width: 100%;
+        margin-top: 100px;
+    }
 }

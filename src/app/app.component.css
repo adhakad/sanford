@@ -28,3 +28,12 @@
     stroke-opacity: 1 !important;
     animation-duration: 5s;
   }
+  .div-height{
+    height: 12vh;
+  }
+
+  @media (min-width: 992px) {
+    .div-height{
+      height: 16vh;
+    }
+  }

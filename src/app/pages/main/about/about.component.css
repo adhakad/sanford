@@ -10,8 +10,8 @@
 }
 
 .side-banner img {
-    width: 450px !important;
-    height: 280px !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .light-aquamarine-container {
@@ -31,32 +31,40 @@
 }
 
 .light-aquamarine-container .our-mission-vission img {
-    max-height: 300px;
-    margin-top: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 .our-mission-card {
     background-color: #fff;
-    min-height: 360px;
-    border-radius: 200px 0 0 200px;
-    padding-top: 20px;
+    min-height: 580px;
+    border-radius: 185px 0 0 185px;
+    padding-top: 40px;
+    text-align: left;
 }
-
+.our-mission-card h2{
+    text-align: right;
+}
 .our-vission-card {
     background-color: #fff;
     min-height: 360px;
-    border-radius: 0 200px 200px 0;
-    padding-top: 20px;
+    border-radius: 0 185px 185px 0;
+    padding-top: 40px;
+    text-align: left;
+}
+.our-vission-card h2{
+    text-align: left;
 }
 
 .leadership {
     background-color: rgb(252, 253, 237);
-    height: 170vh;
-    padding: 50px;
+    height: auto;
+    padding: 0 !important;
 }
 
 .leadership img {
-    margin-top: 200px;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .leadership .title h3 {
@@ -74,8 +82,6 @@
  }
 .core-team .program-card {
     height: 475px;
-    padding: 25px;
-    margin-top: 9px;
  }
 .core-team .program-card .card-img-circle img {
     width: 130px;
@@ -116,5 +122,135 @@
     margin-bottom: 30px;
  }
  .globle-allince img{
-    height: 75%;
+    width: 100%;
+ }
+
+ @media (min-width: 992px) {
+    .side-banner {
+        height: auto !important;
+    }
+    
+    .side-banner .container-section {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    
+    .side-banner img {
+        width: 450px !important;
+        height: 280px !important;
+    }
+    
+    .light-aquamarine-container {
+        height: auto !important;
+        background-color: rgb(232, 255, 248);
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .light-aquamarine-container .container-section {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    
+    .light-aquamarine-container .our-mission-vission {
+        height: auto !important;
+    }
+    
+    .light-aquamarine-container .our-mission-vission img {
+        max-height: 300px;
+        margin-top: 50px;
+    }
+    
+    .our-mission-card {
+        background-color: #fff;
+        min-height: 400px;
+        border-radius: 185px 0 0 185px;
+        padding-top: 40px;
+        text-align: left;
+    }
+    .our-mission-card h2{
+        text-align: left;
+    }
+    .our-vission-card {
+        background-color: #fff;
+        min-height: 400px;
+        border-radius: 0 185px 185px 0;
+        padding-top: 40px;
+        text-align: left;
+    }
+    .our-vission-card h2{
+        text-align: left;
+    }
+    
+    
+    .leadership {
+        background-color: rgb(252, 253, 237);
+        height: 170vh;
+        padding: 50px !important;
+    }
+    
+    .leadership img {
+        width: 100% !important;
+        margin-top: 200px;
+    }
+    
+    .leadership .title h3 {
+        color: #000;
+        font-weight: 600;
+    }
+    
+    .core-team {
+        background-color: #fff;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    .core-team .padding {
+        padding: 30px;
+     }
+    .core-team .program-card {
+        height: 475px;
+        padding: 25px;
+        margin-top: 9px;
+     }
+    .core-team .program-card .card-img-circle img {
+        width: 130px;
+        height: 130px;
+        margin-left: -3.5px;
+        margin-top: 50px;
+     }
+     .core-team .program-card h2{
+        color: #000;
+        font-size: 16px;
+        margin-top: -50px !important;
+        font-weight: 500;
+     }
+    
+     .core-team .program-card h3 {
+        color: #000;
+        font-size: 26px;
+        text-align: center;
+        margin-top: -75px !important;
+        font-weight: 400;
+     }
+    
+     .core-team .program-card p {
+        color: #000;
+        font-size: 16px;
+        text-align: center;
+        line-height: 25px;
+        margin-top: -85px !important;
+     }
+     .globle-allince{
+        padding-top: 30px;
+     }
+     .globle-allince h3{
+        color: #000;
+        font-size: 38px;
+        line-height: 40px;
+        font-weight: 400px;
+        margin-bottom: 30px;
+     }
+     .globle-allince img{
+        height: 75%;
+     }
  }
