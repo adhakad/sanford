@@ -1,0 +1,26 @@
+@import"../../home/home.component.css";
+
+.side-banner h2 {
+    margin-top: 75px !important;
+}
+
+.learning-development h2 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.learning-development h3 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.learning-development p {
+    color: #000;
+    font-size: 16px;
+    line-height: 28px;
+}
+.learning-development img{
+    height: 150px;
+}

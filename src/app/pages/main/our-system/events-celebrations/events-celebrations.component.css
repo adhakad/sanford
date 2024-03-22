@@ -1,0 +1,8 @@
+@import"../../home/home.component.css";
+.img-column{
+    padding: 5px;
+    margin-top: 5px !important;
+}
+.img-column img{
+    width: 100%;
+}

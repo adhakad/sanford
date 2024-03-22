@@ -6,45 +6,98 @@
    background-color: #64748d15;
    padding-bottom: 3vh;
 } */
-
-.banner-card {
-   height: 30vh;
+.white-color {
+   color: #fff !important;
 }
 
-
-@media (min-width: 576px) and (max-width:991.98px) {
-   .home {
-      display: none;
-   }
+.dark-red-color {
+   background-color: rgba(239, 55, 101, 0.953);
 }
 
+.dark-yellow-color {
+   background-color: rgba(238, 166, 24, 0.888);
+}
 
-@media (min-width: 992px) {
+.dark-green-color {
+   background-color: rgba(32, 131, 5, 0.759);
+}
 
-   .home {}
+.dark-skyblue-color {
+   background-color: rgb(62, 162, 225);
+}
+
+.light-red-color {
+   background-color: rgba(255, 226, 239, 0.953);
+}
+
+.light-pink-color {
+   background-color: rgba(255, 226, 250, 0.953);
+}
+
+.light-yellow-color {
+   background-color: rgba(254, 242, 217, 0.888);
+}
+
+.light-green-color {
+   background-color: rgba(224, 255, 215, 0.759);
+}
+
+.light-skyblue-color {
+   background-color: rgb(215, 240, 255);
+}
+
+.light-purpleblue-color {
+   background-color: rgb(232, 215, 255);
+}
+
+.extra-light-red-color {
+   background-color: rgba(255, 240, 247, 0.953);
+}
+
+.extra-light-pink-color {
+   background-color: rgba(255, 240, 253, 0.953);
+}
+
+.extra-light-yellow-color {
+   background-color: rgba(255, 250, 240, 0.888);
+}
+
+.extra-light-green-color {
+   background-color: rgba(243, 254, 241, 0.759);
+}
+
+.extra-light-skyblue-color {
+   background-color: rgb(237, 248, 255);
+}
+
+.extra-light-purpleblue-color {
+   background-color: rgb(245, 237, 255);
+}
 
    .banner-card {
-      height: 85vh !important;
+      height: 35vh !important;
       max-width: 100% !important;
    }
 
    .side-banner {
-      height: 600px;
+      height: auto;
       background-color: rgba(255, 250, 241, 0.922);
       padding-top: 50px;
       padding-bottom: 50px;
    }
 
    .side-banner img {
-      height: 85%;
+      height: 60%;
    }
-
+   .content-margin{
+      margin-top: -200px !important;
+   }
    .title h2 {
       color: rgb(63, 98, 167);
-      font-size: 38px;
+      font-size: 35px;
       font-weight: 600;
       letter-spacing: 1px;
-      line-height: 60px;
+      line-height: 50px;
    }
 
    .title h2 span {
@@ -62,15 +115,18 @@
       color: #000;
       font-size: 16px;
       margin-top: 30px;
-      line-height: 28px;
+      line-height: 25px;
    }
-   .text-center{
+
+   .text-center {
       text-align: center;
    }
-   .padding-top{
+
+   .padding-top {
       padding-top: 30px;
    }
-   .padding-bottom{
+
+   .padding-bottom {
       padding-bottom: 30px;
    }
 
@@ -79,89 +135,12 @@
       padding-top: 30px;
       padding-bottom: 50px;
    }
-
-   /* .our-program h2 {
-      color: rgb(63, 98, 167);
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-align: center;
-      margin-bottom: 55px;
-   }
-
-   .our-program h2 span {
-      color: rgb(239, 104, 51);
-   } */
-
    .our-program .program-card {
-      height: 400px;
-      width: 295px;
+      height: 55vh;
       border-radius: 20px;
       justify-content: center;
       padding: 15px;
       margin-top: 40px;
-   }
-   .white-color{
-      color: #fff !important;
-   }
-   .dark-red-color {
-      background-color: rgba(239, 55, 101, 0.953);
-   }
-
-   .dark-yellow-color {
-      background-color: rgba(238, 166, 24, 0.888);
-   }
-
-   .dark-green-color {
-      background-color: rgba(32, 131, 5, 0.759);
-   }
-
-   .dark-skyblue-color {
-      background-color: rgb(62, 162, 225);
-   }
-
-   .light-red-color {
-      background-color: rgba(255, 226, 239, 0.953);
-   }
-   .light-pink-color {
-      background-color: rgba(255, 226, 250, 0.953);
-   }
-
-   .light-yellow-color {
-      background-color: rgba(254, 242, 217, 0.888);
-   }
-
-   .light-green-color {
-      background-color: rgba(224, 255, 215, 0.759);
-   }
-
-   .light-skyblue-color {
-      background-color: rgb(215, 240, 255);
-   }
-   .light-purpleblue-color {
-      background-color: rgb(232, 215, 255);
-   }
-
-   .extra-light-red-color {
-      background-color: rgba(255, 240, 247, 0.953);
-   }
-   .extra-light-pink-color {
-      background-color: rgba(255, 240, 253, 0.953);
-   }
-
-   .extra-light-yellow-color {
-      background-color: rgba(255, 250, 240, 0.888);
-   }
-
-   .extra-light-green-color {
-      background-color: rgba(243, 254, 241, 0.759);
-   }
-
-   .extra-light-skyblue-color {
-      background-color: rgb(237, 248, 255);
-   }
-   .extra-light-purpleblue-color {
-      background-color: rgb(245, 237, 255);
    }
 
    .our-program .program-card .card-img-circle {
@@ -196,58 +175,263 @@
       margin-bottom: 25px;
       line-height: 25px;
    }
+   .curriculam{
+      height: auto;
+      max-height: 150vh;
+      padding-top: 30px;
+      padding-bottom: 50px;
+   }
+   .curriculam img{
+      height: 18%;
+      margin-top: 50px;
+   }
+   .trade-parter {
+      max-height: 50vh;
+      background-color: #3172bb;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+   }
 
-   .trade-parter{
+   .trade-parter img {
+      width: 100%;
+   }
+
+   .growth-story {
+      background-color: #fff;
+      max-height: 50vh;
+      padding-bottom: 30px;
+   }
+
+   .growth-story img {
+      width: 100%;
+   }
+
+   .franchise-opportunity {
+      background-color: #f7f7f7;
+      height: auto;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+   }
+
+   .franchise-opportunity img {
+      width: 100%;
+   }
+
+   .franchise-opportunity h4 {
+      color: #000;
+      font-family: 'Menlo';
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .5px;
+   }
+
+   .awards {
+      height: auto;
+      max-height: 125vh;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+   }
+
+   .awards .award-carousel {
+      padding-top: 10px !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      padding-bottom: 50px !important;
+   }
+
+   .awards img {
+      width: 155px !important;
+      height: 155px !important;
+   }
+
+   .owl-carousel .animated {
+      animation-duration: 1000ms;
+      animation-fill-mode: both;
+   }
+
+
+@media (min-width: 576px) and (max-width:991.98px) {
+   .home {
+      display: none;
+   }
+}
+
+
+@media (min-width: 992px) {
+
+   .home {}
+
+   .banner-card {
+      height: 85vh !important;
+      max-width: 100% !important;
+   }
+
+   .side-banner {
+      height: 600px;
+   }
+
+   .side-banner img {
+      height: 85%;
+   }
+
+   .content-margin{
+      margin-top: 0px !important;
+   }
+   .title h2 {
+      color: rgb(63, 98, 167);
+      font-size: 38px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 60px;
+   }
+
+   .title h2 span {
+      color: rgb(239, 104, 51);
+      font-weight: bold !important;
+   }
+
+   .title p {
+      color: #000;
+      font-size: 16px;
+      line-height: 28px;
+   }
+
+   .title .p2 {
+      color: #000;
+      font-size: 16px;
+      margin-top: 30px;
+      line-height: 28px;
+   }
+
+   .text-center {
+      text-align: center;
+   }
+
+   .padding-top {
+      padding-top: 30px;
+   }
+
+   .padding-bottom {
+      padding-bottom: 30px;
+   }
+
+   .our-program {
+      background-color: rgb(242, 250, 255);
+      padding-top: 30px;
+      padding-bottom: 50px;
+   }
+
+   .our-program .program-card {
+      height: 400px !important;
+      width: 295px !important;
+      border-radius: 20px;
+      justify-content: center;
+      padding: 15px;
+      margin-top: 40px;
+   }
+
+   .our-program .program-card .card-img-circle {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed #fff;
+      border-radius: 50%;
+      margin-top: 35px;
+   }
+
+   .our-program .program-card .card-img-circle img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-left: -3.5px;
+      margin-top: 9px;
+   }
+
+   .our-program .program-card h3 {
+      color: #fff;
+      font-size: 26px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      font-weight: 400;
+   }
+
+   .our-program .program-card p {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 25px;
+      line-height: 25px;
+   }
+   .curriculam{
+      height: auto;
+      max-height: 80vh;
+   }
+   .curriculam img{
+      height: 25%;
+   }
+   .trade-parter {
       max-height: 70vh;
       background-color: #3172bb;
       text-align: center;
       padding-top: 50px;
       padding-bottom: 0 !important;
    }
-   .trade-parter img{
-      height: 55%;
+
+   .trade-parter img {
+      width: 80%;
    }
-   .growth-story{
+
+   .growth-story {
       background-color: #fff;
       max-height: 50vh;
+      padding-bottom: 50px;
    }
-   .growth-story img{
-      height:60%;
+
+   .growth-story img {
+      width: 100%;
    }
-   .franchise-opportunity{
+
+   .franchise-opportunity {
       background-color: #f7f7f7;
       height: 68vh;
       max-height: 68vh;
       padding-left: 0 !important;
       padding-right: 0 !important;
    }
-   .franchise-opportunity img{
+
+   .franchise-opportunity img {
       height: 68vh;
    }
-   .franchise-opportunity h4{
+
+   .franchise-opportunity h4 {
       color: #000;
-      font-family:'Menlo';
+      font-family: 'Menlo';
       font-size: 24px;
       font-weight: 600;
       letter-spacing: .5px;
    }
-   .awards{
+
+   .awards {
       height: 100vh;
       max-height: 100vh;
       padding-top: 5vh;
    }
-   .awards .award-carousel{
+
+   .awards .award-carousel {
       padding-top: 10px !important;
       padding-left: 10px !important;
       padding-right: 10px !important;
       padding-bottom: 50px !important;
    }
-   .awards img{
+
+   .awards img {
       width: 155px !important;
       height: 155px !important;
    }
 
-   .owl-carousel .animated { 
+   .owl-carousel .animated {
       animation-duration: 1000ms;
-      animation-fill-mode: both; }
+      animation-fill-mode: both;
+   }
 }

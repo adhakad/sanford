@@ -16,6 +16,17 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('src/app/pages/main/about/about.module').then((module) => module.AboutModule) },
   { path: 'contact', loadChildren: () => import('src/app/pages/main/contact/contact.module').then((module) => module.ContactModule) },
 
+  { path: 'curriculam', loadChildren: () => import('src/app/pages/main/our-system/curriculam/curriculam.module').then((module) => module.CurriculamModule) },
+  { path: 'activities', loadChildren: () => import('src/app/pages/main/our-system/activities/activities.module').then((module) => module.ActivitiesModule) },
+  { path: 'programs', loadChildren: () => import('src/app/pages/main/our-system/programs/programs.module').then((module) => module.ProgramsModule) },
+  { path: 'events-celebrations', loadChildren: () => import('src/app/pages/main/our-system/events-celebrations/events-celebrations.module').then((module) => module.EventsCelebrationsModule) },
+  { path: 'facilities', loadChildren: () => import('src/app/pages/main/our-system/facilities/facilities.module').then((module) => module.FacilitiesModule) },
+  { path: 'safety-higiene', loadChildren: () => import('src/app/pages/main/our-system/safety-higiene/safety-higiene.module').then((module) => module.SafetyHigieneModule) },
+  { path: 'teachers', loadChildren: () => import('src/app/pages/main/our-system/teachers/teachers.module').then((module) => module.TeachersModule) },
+  { path: 'parents-connect', loadChildren: () => import('src/app/pages/main/our-system/parents-connect/parents-connect.module').then((module) => module.ParentsConnectModule) },
+  { path: 'admissions', loadChildren: () => import('src/app/pages/main/admissions/admissions.module').then((module) => module.AdmissionsModule) },
+  { path: 'franchise', loadChildren: () => import('src/app/pages/main/franchise/franchise.module').then((module) => module.FranchiseModule) },
+
   //  Student Routing Section
   { path: 'student/signup', loadChildren: () => import('src/app/pages/auth/student-auth/student-signup/student-signup.module').then((module) => module.StudentSignupModule) },
   { path: 'student/login', loadChildren: () => import('src/app/pages/auth/student-auth/student-login/student-login.module').then((module) => module.StudentLoginModule) },
