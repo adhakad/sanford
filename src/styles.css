@@ -29,10 +29,12 @@ Header section
     0 0 0 1px #4d5c7615,
     0 0 4px 0 #64748d15;
 }
+
 .header .logo {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .header .logo img {
   height: 65px;
   /* margin-top: -8px; */
@@ -59,7 +61,7 @@ Header section
   height: 24px;
 }
 
-.mobile-menu{
+.mobile-menu {
   box-shadow: none;
 }
 
@@ -210,6 +212,7 @@ p {
   margin-top: 10px !important;
   box-shadow: none !important;
 }
+
 .submit-button:hover {
   height: 50px;
   width: 225px;
@@ -463,6 +466,7 @@ table mat-icon {
 }
 
 @media (min-width: 992px) {
+
   /* 
 Header section
 */
@@ -473,6 +477,7 @@ Header section
     min-height: 16vh !important;
     padding-bottom: 15px;
   }
+
   .header .logo img {
     height: 105px;
     /* margin-top: -8px; */
@@ -484,7 +489,8 @@ Header section
     letter-spacing: .5px;
 
   }
-  .header .main-menu  span {
+
+  .header .main-menu span {
     font: 1em sans-serif;
     letter-spacing: .4px;
   }
@@ -505,9 +511,11 @@ Header section
     font: 16px sans-serif;
     letter-spacing: .85px;
   }
-  .desktop-menu{
+
+  .desktop-menu {
     padding: 25px;
   }
+
   .desktop-menu span {
     color: #000;
   }

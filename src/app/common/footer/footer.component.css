@@ -1,10 +1,10 @@
 .footer {
-   background-color: rgb(36, 8, 71);
-   /* text-align: center;#241750f2 */
+   background-color: rgb(235, 235, 235);
+   overflow: hidden;
 }
 
 .mat-divider {
-   background-color: #e0e0ffe2;
+   background-color: #000;
 }
 
 .footer-card {
@@ -12,50 +12,70 @@
 }
 
 .footer-card h3 {
-   color: #fff;
-   font-size: 20px;
+   color: rgb(63, 98, 167);
+   font-size: 25px;
    letter-spacing: .5px;
 }
 
 .footer-card .footer-item p {
-   color: #e0e0ffe2;
+   color: #000;
    font-size: 16px;
    letter-spacing: .5px;
    margin-top: 25px;
    margin-bottom: 25px;
    cursor: pointer;
 }
+
 .footer-card .footer-item p:hover {
    color: #fff;
 }
+
+.copyright {
+   background-color: rgb(36, 8, 71);
+   height: 15vh;
+   padding-top: 5px;
+   padding-bottom: 10px;
+}
+
 .copyright p {
-   color: #e0e0ffe2;
+   color: #fff;
    font-size: 15px;
    letter-spacing: .45px;
    text-align: center;
 }
 
 .copyright p span {
-   color: rgb(184, 184, 255);
+   color: rgb(171, 171, 255);
    cursor: pointer;
 }
+
 .copyright p span:hover {
    color: #8d6dff;
 }
-.margin-social-media-icon{
+
+.margin-social-media-icon {
    margin-top: 25px !important;
 }
-.bi-facebook ,.bi-linkedin,.bi-instagram,.bi-youtube{
-   color: #e0e0ffe2;
+
+.bi-facebook,
+.bi-linkedin,
+.bi-instagram,
+.bi-youtube {
+   color: rgb(63, 98, 167);
    font-size: 2em;
    cursor: pointer;
    margin-right: 20px;
 }
-.bi-facebook:hover ,.bi-linkedin:hover,.bi-instagram:hover,.bi-youtube:hover{
+
+.bi-facebook:hover,
+.bi-linkedin:hover,
+.bi-instagram:hover,
+.bi-youtube:hover {
    color: #fff;
 }
-.mat-icon{
-   color: #e0e0ffe2;
+
+.mat-icon {
+   color: rgb(63, 98, 167);
    display: inline;
 }
 
@@ -68,7 +88,7 @@
    .footer-card {}
 
    .footer-card h3 {
-      font-size: 20px;
+      font-size: 25px;
       letter-spacing: .5px;
    }
 
@@ -77,6 +97,12 @@
       letter-spacing: .5px;
       /* margin-top: 15px;
        margin-bottom: 15px; */
+   }
+
+   .copyright {
+      height: 15vh;
+      padding-top: 5px;
+      padding-bottom: 10px;
    }
 
    .copyright p {
