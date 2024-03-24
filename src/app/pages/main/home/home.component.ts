@@ -2,11 +2,12 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 declare var jQuery: any;
 import { isPlatformBrowser } from '@angular/common';
-import { Banner } from 'src/app/modal/banner.model';
-import { Teacher } from 'src/app/modal/teacher.model';
-import { Ads } from 'src/app/modal/ads.model';
-import { Topper } from 'src/app/modal/topper.model';
-import { Testimonial } from 'src/app/modal/testimonial.model';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+// import { Banner } from 'src/app/modal/banner.model';
+// import { Teacher } from 'src/app/modal/teacher.model';
+// import { Ads } from 'src/app/modal/ads.model';
+// import { Topper } from 'src/app/modal/topper.model';
+// import { Testimonial } from 'src/app/modal/testimonial.model';
 import { environment } from 'src/environments/environment';
 import { BannerService } from 'src/app/services/banner.service';
 import { AdsService } from 'src/app/services/ads.service';
@@ -41,9 +42,23 @@ export class HomeComponent implements OnInit {
     { id: 2, name: 'Student 2' },
     // Add more students as needed
   ];
+  youtubeVideoUrl: SafeResourceUrl;
+  thumbnailImageUrl: SafeUrl;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private sanitizer: DomSanitizer, private schoolService: SchoolService, private printPdfService: PrintPdfService, private bannerService: BannerService, private topperService: TopperService, private testimonialService: TestimonialService, private adsService: AdsService, private studentAuthService: StudentAuthService) {
+    const youtubeVideoLink = "https://www.youtube.com/watch?v=FK0vHW42v_0";
+    const videoId = this.getVideoIdFromUrl(youtubeVideoLink);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private schoolService: SchoolService, private printPdfService: PrintPdfService, private bannerService: BannerService, private topperService: TopperService, private testimonialService: TestimonialService, private adsService: AdsService, private studentAuthService: StudentAuthService) { }
+    // Construct YouTube video URL
+    const videoUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
+
+    // Replace these URLs with actual YouTube video URL and thumbnail URL
+    const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+
+    // Sanitize URLs
+    this.youtubeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
+    this.thumbnailImageUrl = this.sanitizer.bypassSecurityTrustUrl(thumbnailUrl);
+  }
 
   async ngOnInit() {
     this.getLoggedInStudentInfo();
@@ -51,6 +66,19 @@ export class HomeComponent implements OnInit {
     this.getAds()
     this.getTestimonial();
     this.getTopper();
+  }
+
+  getVideoIdFromUrl(url: string): string | null {
+    const videoIdMatch = url.match(/(?:\?|&)v=([^\?&]+)/);
+    if (videoIdMatch) {
+      return videoIdMatch[1];
+    }
+    return null;
+  }
+
+  redirectUser() {
+    // Redirect user to YouTube video link
+    window.location.href = this.youtubeVideoUrl.toString();
   }
 
   getLoggedInStudentInfo() {
