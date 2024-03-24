@@ -56,7 +56,7 @@ Header section
 }
 
 .hamburger-icon {
-  fill: #4f98c2;
+  fill: rgb(63, 98, 167);
   width: 24px;
   height: 24px;
 }
@@ -83,9 +83,12 @@ Header section
 }
 
 .hamburger-menu .mat-icon {
-  font-size: medium;
+  font-size:larger;
   margin-top: 5px;
-  color: #000 !important;
+  color: rgb(63, 98, 167) !important;
+}
+.mobile-menu .mat-icon{
+  color: rgb(63, 98, 167);
 }
 
 .hamburger-menu .close-icon {
@@ -94,7 +97,6 @@ Header section
   margin-top: 3.5vh;
   margin-left: 88%;
 }
-
 .top-hamburger-menu {
   display: none;
 }
@@ -513,7 +515,9 @@ Header section
   }
 
   .desktop-menu {
-    padding: 25px;
+    width: 150%;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .desktop-menu span {
@@ -523,7 +527,7 @@ Header section
   .desktop-menu .mat-icon {
     font-size: medium;
     margin-top: 2px;
-    color: #000;
+    color: rgb(63, 98, 167);
   }
 
   .hamburger {

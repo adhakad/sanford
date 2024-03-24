@@ -1,18 +1,1 @@
 @import"../../home/home.component.css";
-.img-column{
-    padding: 10px;
-    margin-top: 5px !important;
-}
-.img-column img{
-    width: 100%;
-}
-
-@media (min-width: 992px) {
-    .img-column{
-        padding: 5px;
-        margin-top: 5px !important;
-    }
-    .img-column img{
-        width: 100%;
-    }
-}

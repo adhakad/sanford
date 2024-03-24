@@ -1,1 +1,90 @@
-<p>admissions works!</p>
+<app-header></app-header>
+<div class="home">
+    <div class="row">
+        <div class="main-card">
+            <div class="container-fluid light-yellow-color padding-top padding-bottom">
+                <div class="row">
+                    <div class="col-12 col-lg-12 title padding-top text-center padding-bottom">
+                        <h2>ADMISSION IN <span>SANFORT</span></h2>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 offset-lg-3">
+                                <p>Admission in SANFORT remains open throughout the year on first come first serve basis
+                                    depending on the availability of seats in the respective branch.</p>
+                            </div>
+                        </div>
+                        <h2>AGE <span>CRITERIA</span></h2>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="row">
+                            <div class="col-12 col-lg-5 offset-lg-2">
+                                <div class="row padding">
+                                    <div class="card">
+                                        <h4>PROGRAM</h4>
+                                        <h5>SAN Toddler</h5>
+                                        <h5>SAN Learner (Play Group)</h5>
+                                        <h5>SAN Junior (Nursery/ LKG/ Jr. KG)</h5>
+                                        <h5>SAN Senior (KG/ UKG/ Sr. KG)</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <div class="row padding">
+                                    <div class="card">
+                                        <h4>AGE GROUP</h4>
+                                        <h5>2 - 3</h5>
+                                        <h5>3 - 4</h5>
+                                        <h5>4 - 5</h5>
+                                        <h5>5 - 6</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                <div class="admission-form text-center">
+                                    <h3>ADMISSIONS OPEN FOR AY 24–25</h3>
+                                    <form>
+                                        <div class="row">
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>Name</mat-label>
+                                                <input matInput type="text">
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>Email</mat-label>
+                                                <input matInput type="text">
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>Mobile</mat-label>
+                                                <input matInput type="text">
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>City</mat-label>
+                                                <input matInput type="text">
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>Message</mat-label>
+                                                <input matInput type="text">
+                                            </mat-form-field>
+                                        </div>
+                                        <div>
+                                            <button type="submit" mat-raised-button
+                                                class="submit-button">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-overlay" *ngIf="loader">
+        <mat-progress-spinner *ngIf="loader" diameter="65" mode="indeterminate" strokeWidth="3"></mat-progress-spinner>
+    </div>
+</div>

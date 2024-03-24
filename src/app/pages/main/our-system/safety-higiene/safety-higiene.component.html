@@ -1,1 +1,25 @@
-<p>safety-higiene works!</p>
+<app-header></app-header>
+<div class="home">
+    <div class="row">
+        <div class="main-card">
+            <div class="container-fluid extra-light-skyblue-color padding-top padding-bottom">
+                <div class="row">
+                    <div class="col-10 offset-1 col-lg-3 offset-lg-1">
+                        <img src="../../../../../assets/our-system/teachers/sanford-teachers.jpg" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1 title padding-top">
+                        <h2>SAFETY & <span>HYGIENE</span></h2>
+                        <p>SANFORT is committed to give a safe, secure and hygienic environment to its students. We maintain highest level of safety and hygiene and follow all the Covid-19 Protocols to give our children a safe and hygienic environment. Deep cleaning and sanitization of classrooms, washrooms and sanitization of toys, play equipment, furniture, etc. is at regular intervals is our routine feature.</p>
+                        <p>Every corner of the school remains under CCTV surveillance and a trained & attentive security guard is always on duty at the school gate. No visitor is allowed to go beyond the reception till the time children are there in the school.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-overlay" *ngIf="loader">
+        <mat-progress-spinner *ngIf="loader" diameter="65" mode="indeterminate" strokeWidth="3"></mat-progress-spinner>
+    </div>
+</div>

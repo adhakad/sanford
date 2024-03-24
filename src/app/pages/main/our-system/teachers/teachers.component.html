@@ -1,1 +1,25 @@
-<p>teachers works!</p>
+<app-header></app-header>
+<div class="home">
+    <div class="row">
+        <div class="main-card">
+            <div class="container-fluid extra-light-skyblue-color padding-top padding-bottom">
+                <div class="row">
+                    <div class="col-10 offset-1 col-lg-3 offset-lg-1">
+                        <img src="../../../../../assets/our-system/teachers/sanford-teachers.jpg" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1 title padding-top">
+                        <h2>TEACHERS AT <span>SANFORT</span></h2>
+                        <p>Our teachers are experienced, qualified, passionate and motivated to create an enriching learning experience for little ones. They are engrossed in creating varied teaching and learning techniques within an innovative curriculum. Our teachers with various learning pedagogies kindle child’s interest towards their first step of learning and nurture them holistically.</p>
+                        <p>Our teachers are well trained to implement the teaching techniques & activities and comprehensive & child-centered lesson plans, researched, designed & developed centrally by our experts. They are equipped with in-service orientation, education and training program, inter-school exchange program and many other skill up-gradation workshops.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-overlay" *ngIf="loader">
+        <mat-progress-spinner *ngIf="loader" diameter="65" mode="indeterminate" strokeWidth="3"></mat-progress-spinner>
+    </div>
+</div>

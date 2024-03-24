@@ -76,206 +76,222 @@
    background-color: rgb(245, 237, 255);
 }
 
-   .banner-card {
-      height: 35vh !important;
-      max-width: 100% !important;
-   }
+.banner-card {
+   height: 35vh !important;
+   max-width: 100% !important;
+}
 
-   .side-banner {
-      height: auto;
-      background-color: rgba(255, 250, 241, 0.922);
-      padding-top: 50px;
-      padding-bottom: 50px;
-   }
+.side-banner {
+   height: auto;
+   background-color: rgba(255, 250, 241, 0.922);
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
 
-   .side-banner img {
-      height: 60%;
-   }
-   .content-margin{
-      margin-top: -200px !important;
-   }
-   .title h2 {
-      color: rgb(63, 98, 167);
-      font-size: 35px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      line-height: 50px;
-   }
+.side-banner img {
+   height: 60%;
+}
 
-   .title h2 span {
-      color: rgb(239, 104, 51);
-      font-weight: bold !important;
-   }
+.content-margin {
+   margin-top: -200px !important;
+}
 
-   .title p {
-      color: #000;
-      font-size: 16px;
-      line-height: 28px;
-   }
+.title h2 {
+   color: rgb(63, 98, 167);
+   font-size: 35px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   line-height: 50px;
+}
 
-   .title .p2 {
-      color: #000;
-      font-size: 16px;
-      margin-top: 30px;
-      line-height: 25px;
-   }
+.title h2 span {
+   color: rgb(239, 104, 51);
+   font-weight: bold !important;
+}
 
-   .text-center {
-      text-align: center;
-   }
+.title p {
+   color: #000;
+   font-size: 16px;
+   line-height: 28px;
+}
 
-   .padding-top {
-      padding-top: 30px;
-   }
+.title .p2 {
+   color: #000;
+   font-size: 16px;
+   margin-top: 30px;
+   line-height: 25px;
+}
 
-   .padding-bottom {
-      padding-bottom: 30px;
-   }
+.text-center {
+   text-align: center;
+}
 
-   .our-program {
-      background-color: rgb(242, 250, 255);
-      padding-top: 30px;
-      padding-bottom: 50px;
-   }
-   .our-program .program-card {
-      height: 55vh;
-      border-radius: 20px;
-      justify-content: center;
-      padding: 15px;
-      margin-top: 40px;
-   }
+.padding-top {
+   padding-top: 30px;
+}
 
-   .our-program .program-card .card-img-circle {
-      width: 150px;
-      height: 150px;
-      border: 2px dashed #fff;
-      border-radius: 50%;
-      margin-top: 35px;
-   }
+.padding-bottom {
+   padding-bottom: 30px;
+}
 
-   .our-program .program-card .card-img-circle img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      margin-left: -3.5px;
-      margin-top: 9px;
-   }
+.our-program {
+   background-color: rgb(242, 250, 255);
+   padding-top: 30px;
+   padding-bottom: 50px;
+}
 
-   .our-program .program-card h3 {
-      color: #fff;
-      font-size: 26px;
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 25px;
-      font-weight: 400;
-   }
+.our-program .program-card {
+   height: 55vh;
+   border-radius: 20px;
+   justify-content: center;
+   padding: 15px;
+   margin-top: 40px;
+}
 
-   .our-program .program-card p {
-      color: #fff;
-      font-size: 16px;
-      text-align: center;
-      margin-bottom: 25px;
-      line-height: 25px;
-   }
-   .curriculam{
-      height: auto;
-      max-height: 150vh;
-      padding-top: 30px;
-      padding-bottom: 50px;
-   }
-   .curriculam img{
-      height: 18%;
-      margin-top: 50px;
-   }
-   .trade-parter {
-      max-height: 50vh;
-      background-color: #3172bb;
-      text-align: center;
-      padding-top: 30px;
-      padding-bottom: 30px;
-   }
+.our-program .program-card .card-img-circle {
+   width: 150px;
+   height: 150px;
+   border: 2px dashed #fff;
+   border-radius: 50%;
+   margin-top: 35px;
+}
 
-   .trade-parter img {
-      width: 100%;
-   }
+.our-program .program-card .card-img-circle img {
+   width: 130px;
+   height: 130px;
+   border-radius: 50%;
+   margin-left: -3.5px;
+   margin-top: 9px;
+}
 
-   .growth-story {
-      background-color: #fff;
-      max-height: 50vh;
-      padding-bottom: 30px;
-   }
+.our-program .program-card h3 {
+   color: #fff;
+   font-size: 26px;
+   text-align: center;
+   margin-top: 30px;
+   margin-bottom: 25px;
+   font-weight: 400;
+}
 
-   .growth-story img {
-      width: 100%;
-   }
+.our-program .program-card p {
+   color: #fff;
+   font-size: 16px;
+   text-align: center;
+   margin-bottom: 25px;
+   line-height: 25px;
+}
 
-   .franchise-opportunity {
-      background-color: #f7f7f7;
-      height: auto;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-   }
+.curriculam {
+   height: auto;
+   max-height: 150vh;
+   padding-top: 30px;
+   padding-bottom: 50px;
+}
 
-   .franchise-opportunity img {
-      width: 100%;
-   }
+.curriculam img {
+   height: 18%;
+   margin-top: 50px;
+}
 
-   .franchise-opportunity h4 {
-      color: #000;
-      font-family: 'Menlo';
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: .5px;
-   }
+.trade-parter {
+   max-height: 50vh;
+   background-color: #3172bb;
+   text-align: center;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
 
-   .awards {
-      height: auto;
-      max-height: 125vh;
-      padding-top: 5vh;
-      padding-bottom: 5vh;
-   }
+.trade-parter img {
+   width: 100%;
+}
 
-   .awards .award-carousel {
-      padding-top: 10px !important;
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-      padding-bottom: 50px !important;
-   }
+.growth-story {
+   background-color: #fff;
+   max-height: 50vh;
+   padding-bottom: 30px;
+}
 
-   .awards img {
-      width: 155px !important;
-      height: 155px !important;
-   }
+.growth-story img {
+   width: 100%;
+}
 
-   .owl-carousel .animated {
-      animation-duration: 1000ms;
-      animation-fill-mode: both;
-   }
-   .submit-button1 {
-      position: fixed;
-      top: 78vh;
-      right: 1%;
-      z-index: 10;
-      height: 50px;
-      width: 175px;
-      background: #f301a6;
-      color: #FFF;
-      margin-top: 10px !important;
-      box-shadow: none !important;
-    }
-    
-    .submit-button2 {
-      position: fixed;
-      top: 85vh;
-      right: 1%;
-      z-index: 10;
-      height: 50px;
-      width: 175px;
-      background: #f301a6;
-      color: #FFF;
-      margin-top: 10px !important;
-      box-shadow: none !important;
-    }
+.franchise-opportunity {
+   background-color: #f7f7f7;
+   height: auto;
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+}
+
+.franchise-opportunity img {
+   width: 100%;
+}
+
+.franchise-opportunity h4 {
+   color: #000;
+   font-family: 'Menlo';
+   font-size: 24px;
+   font-weight: 600;
+   letter-spacing: .5px;
+}
+
+.img-column {
+   padding: 10px;
+   margin-top: 5px !important;
+}
+
+.img-column img {
+   width: 100%;
+}
+
+.awards {
+   height: auto;
+   max-height: 125vh;
+   padding-top: 5vh;
+   padding-bottom: 5vh;
+}
+
+.awards .award-carousel {
+   padding-top: 10px !important;
+   padding-left: 10px !important;
+   padding-right: 10px !important;
+   padding-bottom: 50px !important;
+}
+
+.awards img {
+   width: 155px !important;
+   height: 155px !important;
+}
+
+.owl-carousel .animated {
+   animation-duration: 1000ms;
+   animation-fill-mode: both;
+}
+
+.submit-button1 {
+   position: fixed;
+   top: 72vh;
+   right: 1%;
+   z-index: 10;
+   height: 45px;
+   width: 165px;
+   background: rgb(255, 0, 123);
+   color: #FFF;
+   margin-top: 10px !important;
+   box-shadow: none !important;
+}
+
+.submit-button2 {
+   position: fixed;
+   top: 78vh;
+   right: 1%;
+   z-index: 10;
+   height: 45px;
+   width: 165px;
+   background: rgb(255, 0, 123);
+   color: #FFF;
+   margin-top: 10px !important;
+   box-shadow: none !important;
+}
 
 @media (min-width: 576px) and (max-width:991.98px) {
    .home {
@@ -301,9 +317,10 @@
       height: 85%;
    }
 
-   .content-margin{
+   .content-margin {
       margin-top: 0px !important;
    }
+
    .title h2 {
       color: rgb(63, 98, 167);
       font-size: 38px;
@@ -389,13 +406,16 @@
       margin-bottom: 25px;
       line-height: 25px;
    }
-   .curriculam{
+
+   .curriculam {
       height: auto;
       max-height: 80vh;
    }
-   .curriculam img{
+
+   .curriculam img {
       height: 25%;
    }
+
    .trade-parter {
       max-height: 70vh;
       background-color: #3172bb;
@@ -438,6 +458,15 @@
       letter-spacing: .5px;
    }
 
+   .img-column {
+      padding: 5px;
+      margin-top: 5px !important;
+   }
+
+   .img-column img {
+      width: 100%;
+   }
+
    .awards {
       height: 100vh;
       max-height: 100vh;
@@ -460,29 +489,20 @@
       animation-duration: 1000ms;
       animation-fill-mode: both;
    }
+
    .submit-button1 {
       position: fixed;
       top: 75vh;
       right: 1%;
       z-index: 10;
-      height: 50px;
-      width: 200px;
-      background: #f301a6;
-      color: #FFF;
       margin-top: 10px !important;
-      box-shadow: none !important;
-    }
-    
-    .submit-button2 {
+   }
+
+   .submit-button2 {
       position: fixed;
-      top: 84vh;
+      top: 83vh;
       right: 1%;
       z-index: 10;
-      height: 50px;
-      width: 200px;
-      background: #f301a6;
-      color: #FFF;
       margin-top: 10px !important;
-      box-shadow: none !important;
-    }
+   }
 }

@@ -13,9 +13,6 @@
     </button>
   </div>
   <div class="main-menu col-lg-10" style="text-align: center;">
-    <!-- <button mat-button>
-      <span class="menu-item" [routerLink]="['/']">Home</span>
-    </button> -->
     <button #button mat-button  routerLink="/about">
       <div
         style="height: 5px;background-color: rgba(6, 0, 179, 0.693);width: 125px;margin-left:-10px;border-radius: 5px;">
@@ -59,34 +56,37 @@
 
 <mat-menu #ourSystemMenu="matMenu" class="desktop-menu">
   <button mat-menu-item routerLink="/curriculam">
+    <mat-icon>auto_stories</mat-icon>
     <span>Our Curriculam</span>
   </button>
   <button mat-menu-item routerLink="/programs">
+    <mat-icon>flutter_dash</mat-icon>
     <span>Programs</span>
   </button>
   <button mat-menu-item routerLink="/facilities">
+    <mat-icon>compost</mat-icon>
     <span>Facilities</span>
   </button>
   <button mat-menu-item routerLink="/activities">
+    <mat-icon>keyboard_command_key</mat-icon>
     <span>Activities</span>
   </button>
   <button mat-menu-item routerLink="/events-celebrations">
+    <mat-icon>celebration</mat-icon>
     <span>Events & Celebrations</span>
   </button>
   <button mat-menu-item routerLink="/safety-hygiene">
+    <mat-icon>safety_check</mat-icon>
     <span>Safety & Hygiene</span>
   </button>
   <button mat-menu-item routerLink="/teachers">
+    <mat-icon>diversity_2</mat-icon>
     <span>Teachers</span>
   </button>
   <button mat-menu-item routerLink="/parents-connect">
+    <mat-icon>family_restroom</mat-icon>
     <span>Parents Connect</span>
   </button>
-
-</mat-menu>
-
-
-<mat-menu #examMenu="matMenu" class="desktop-menu">
   <button mat-menu-item routerLink="/admit-card">
     <mat-icon>assignment</mat-icon>
     <span>Admit Card</span>
@@ -95,11 +95,108 @@
     <mat-icon>content_paste_search</mat-icon>
     <span>Exam Results</span>
   </button>
+  <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
+  routerLink="/admin/login">
+  <mat-icon>admin_panel_settings</mat-icon>
+  <span>Admin Login</span>
+</button>
+<button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
+  routerLink="/teacher/login">
+  <mat-icon>account_box</mat-icon>
+  <span>Teacher Login</span>
+</button>
+<button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
+  routerLink="/student/login">
+  <mat-icon>person</mat-icon>
+  <span>Student Login</span>
+</button>
+<button mat-menu-item *ngIf="isAdminAuthenticated" routerLink="/admin/dashboard">
+  <mat-icon>dashboard</mat-icon>
+  <span>Admin Dashboard</span>
+</button>
+<button mat-menu-item *ngIf="isTeacherAuthenticated" routerLink="/teacher/dashboard">
+  <mat-icon>dashboard</mat-icon>
+  <span>Teacher Dashboard</span>
+</button>
+<button mat-menu-item *ngIf="isStudentAuthenticated" routerLink="/student/dashboard">
+  <mat-icon>dashboard</mat-icon>
+  <span>Student Dashboard</span>
+</button>
 </mat-menu>
 
-
-<mat-menu #accountMenu="matMenu" class="desktop-menu">
-  <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
+<div [ngClass]="{'top-hamburger-menu': false == nav}">
+  <mat-toolbar class="hamburger-menu">
+    <mat-icon class="close-icon" (click)="hamburgerMenu(false)">close</mat-icon>
+    <button mat-menu-item routerLink="/" routerLinkActive="active-link" (click)="hamburgerMenu(true)">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item routerLink="/about">
+      <mat-icon>contact_support</mat-icon>
+      <span>About Us</span>
+    </button>
+    <!-- Dropdown Trigger Button with Arrow -->
+    <button  mat-menu-item  [matMenuTriggerFor]="mobileMenu">
+      <mat-icon>view_cozy</mat-icon>
+      <span>Our System</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/admissions">
+      <mat-icon>list_alt</mat-icon>
+      <span>Admission</span>
+    </button>
+    <button mat-menu-item routerLink="/franchise">
+      <mat-icon>apartment</mat-icon>
+      <span>Franchise</span>
+    </button>
+    <button mat-menu-item routerLink="/contact">
+      <mat-icon>call</mat-icon>
+      <span>Contact Us</span>
+    </button>
+  </mat-toolbar>
+  <!-- Dropdown Menu -->
+  <mat-menu #mobileMenu="matMenu" class="mobile-menu">
+    <button mat-menu-item routerLink="/curriculam">
+      <mat-icon>auto_stories</mat-icon>
+      <span>Our Curriculam</span>
+    </button>
+    <button mat-menu-item routerLink="/programs">
+      <mat-icon>flutter_dash</mat-icon>
+      <span>Programs</span>
+    </button>
+    <button mat-menu-item routerLink="/facilities">
+      <mat-icon>compost</mat-icon>
+      <span>Facilities</span>
+    </button>
+    <button mat-menu-item routerLink="/activities">
+      <mat-icon>keyboard_command_key</mat-icon>
+      <span>Activities</span>
+    </button>
+    <button mat-menu-item routerLink="/events-celebrations">
+      <mat-icon>celebration</mat-icon>
+      <span>Events & Celebrations</span>
+    </button>
+    <button mat-menu-item routerLink="/safety-hygiene">
+      <mat-icon>safety_check</mat-icon>
+      <span>Safety & Hygiene</span>
+    </button>
+    <button mat-menu-item routerLink="/teachers">
+      <mat-icon>diversity_2</mat-icon>
+      <span>Teachers</span>
+    </button>
+    <button mat-menu-item routerLink="/parents-connect">
+      <mat-icon>family_restroom</mat-icon>
+      <span>Parents Connect</span>
+    </button>
+    <button mat-menu-item routerLink="/admit-card">
+      <mat-icon>assignment</mat-icon>
+      <span>Admit Card</span>
+    </button>
+    <button mat-menu-item routerLink="/result">
+      <mat-icon>content_paste_search</mat-icon>
+      <span>Exam Results</span>
+    </button>
+    <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
     routerLink="/admin/login">
     <mat-icon>admin_panel_settings</mat-icon>
     <span>Admin Login</span>
@@ -126,148 +223,6 @@
     <mat-icon>dashboard</mat-icon>
     <span>Student Dashboard</span>
   </button>
-  <!-- <button mat-menu-item *ngIf="isAdminAuthenticated" (click)="onLogout('admin')">
-    <mat-icon>logout</mat-icon>
-    <span>Logout</span>
-  </button> -->
-  <!-- <button mat-menu-item *ngIf="isTeacherAuthenticated" (click)="onLogout('teacher')">
-    <mat-icon>logout</mat-icon>
-    <span>Logout</span>
-  </button>
-  <button mat-menu-item *ngIf="isStudentAuthenticated" (click)="onLogout('student')">
-    <mat-icon>logout</mat-icon>
-    <span>Logout</span>
-  </button> -->
-</mat-menu>
-
-
-<!-- <div [ngClass]="{'top-hamburger-menu' : false==nav}">
-  <mat-toolbar class="hamburger-menu">
-    <mat-icon class="close-icon" (click)="hamburgerMenu(false)">close</mat-icon>
-    <button mat-menu-item routerLink="/" routerLinkActive="active-link" (click)="hamburgerMenu(true)">
-      <span>Home</span>
-    </button>
-    <button mat-menu-item routerLink="/notice" routerLinkActive="active-link" (click)="viewNotification()">
-      <mat-icon *ngIf="notificationCount" class="material-icons mat-badge-small" [matBadge]="notificationCount"
-        matBadgeColor="accent" matBadgeSize="small">notifications</mat-icon>
-      <mat-icon *ngIf="!notificationCount" class="material-icons mat-badge-small">notifications</mat-icon>
-      <span>Notification</span>
-    </button>
-    <button mat-menu-item routerLink="/about">
-      <span>About Us</span>
-    </button>
-    <button mat-menu-item routerLink="/admissions">
-      <span>Admission</span>
-    </button>
-    <button mat-menu-item routerLink="/curriculam">
-      <span>Our Curriculam</span>
-    </button>
-    <button mat-menu-item routerLink="/program">
-      <span>Program</span>
-    </button>
-    <button mat-menu-item routerLink="/facilities">
-      <span>Facilities</span>
-    </button>
-    <button mat-menu-item routerLink="/activities">
-      <span>Activities</span>
-    </button>
-    <button mat-menu-item routerLink="/events-celebrations">
-      <span>Events & Celebrations</span>
-    </button>
-    <button mat-menu-item routerLink="/safety-hygiene">
-      <span>Safety & Hygiene</span>
-    </button>
-    <button mat-menu-item routerLink="/teachers">
-      <span>Teachers</span>
-    </button>
-    <button mat-menu-item routerLink="/parents-connect">
-      <span>Parents Connect</span>
-    </button>
-
-
-
-
-
-    <button mat-menu-item routerLink="/admit-card">
-      <span>Admit Card</span>
-    </button>
-    <button mat-menu-item routerLink="/result">
-      <span>Exam Result</span>
-    </button>
-    <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
-      routerLink="/admin/login">
-      <span>Admin Login</span>
-    </button>
-    <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
-      routerLink="/teacher/login">
-      <span>Teacher Login</span>
-    </button>
-    <button mat-menu-item *ngIf="!isAdminAuthenticated && !isTeacherAuthenticated && !isStudentAuthenticated"
-      routerLink="/student/login">
-      <span>Student Login</span>
-    </button>
-    <button mat-menu-item *ngIf="isAdminAuthenticated" routerLink="/admin/dashboard">
-      <span>Admin Dashboard</span>
-    </button>
-    <button mat-menu-item *ngIf="isTeacherAuthenticated" routerLink="/teacher/dashboard">
-      <span>Teacher Dashboard</span>
-    </button>
-    <button mat-menu-item *ngIf="isStudentAuthenticated" routerLink="/student/dashboard">
-      <span>Student Dashboard</span>
-    </button>
-  </mat-toolbar>
-</div> -->
-
-<div [ngClass]="{'top-hamburger-menu': false == nav}">
-  <mat-toolbar class="hamburger-menu">
-    <mat-icon class="close-icon" (click)="hamburgerMenu(false)">close</mat-icon>
-    <button mat-menu-item routerLink="/" routerLinkActive="active-link" (click)="hamburgerMenu(true)">
-      <span>Home</span>
-    </button>
-    <button mat-menu-item routerLink="/about">
-      <span>About Us</span>
-    </button>
-    <!-- Dropdown Trigger Button with Arrow -->
-    <button  mat-menu-item  [matMenuTriggerFor]="mobileMenu">
-      <span>Our System</span>
-      <mat-icon>arrow_drop_down</mat-icon>
-    </button>
-    <button mat-menu-item routerLink="/admissions">
-      <span>Admission</span>
-    </button>
-    <button mat-menu-item routerLink="/franchise">
-      <span>Franchise</span>
-    </button>
-    <button mat-menu-item routerLink="/contact">
-      <span>Contact Us</span>
-    </button>
-  </mat-toolbar>
-  <!-- Dropdown Menu -->
-  <mat-menu #mobileMenu="matMenu" class="mobile-menu">
-    <button mat-menu-item routerLink="/curriculam">
-      <span>Our Curriculum</span>
-    </button>
-    <button mat-menu-item routerLink="/programs">
-      <span>Program</span>
-    </button>
-    <button mat-menu-item routerLink="/facilities">
-      <span>Facilities</span>
-    </button>
-    <button mat-menu-item routerLink="/activities">
-      <span>Activities</span>
-    </button>
-    <button mat-menu-item routerLink="/events-celebrations">
-      <span>Events & Celebrations</span>
-    </button>
-    <button mat-menu-item routerLink="/safety-hygiene">
-      <span>Safety & Hygiene</span>
-    </button>
-    <button mat-menu-item routerLink="/teachers">
-      <span>Teachers</span>
-    </button>
-    <button mat-menu-item routerLink="/parents-connect">
-      <span>Parents Connect</span>
-    </button>
   </mat-menu>
 </div>
 
