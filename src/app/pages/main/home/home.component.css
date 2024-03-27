@@ -16,6 +16,10 @@
    background-color: rgba(239, 55, 101, 0.953);
 }
 
+.dark-pink-color {
+   background-color: rgba(239, 55, 165, 0.953);
+}
+
 .dark-yellow-color {
    background-color: rgba(238, 166, 24, 0.888);
 }
@@ -226,6 +230,10 @@
    width: 100%;
 }
 
+.franchise-heading{
+   margin-top: 30px;
+}
+
 .franchise-opportunity h4 {
    color: #000;
    font-family: 'Menlo';
@@ -269,7 +277,7 @@
 
 .submit-button1 {
    position: fixed;
-   top: 72vh;
+   top: 70vh;
    right: 1%;
    z-index: 10;
    height: 45px;
@@ -296,10 +304,16 @@
 
 
 
-.video-container {
+
+ 
+ .video-container {
    position: relative;
-   width: 100%;
+   width: 100%; /* Full width */
+   min-height: 225px;
+   max-height: 225px;
    overflow: hidden;
+   margin-bottom: 10px;
+   border-radius: 15px;
  }
  
  .video-container iframe {
@@ -308,12 +322,13 @@
    left: 0;
    width: 100%;
    height: 100%;
+   border: 0; /* Remove iframe border */
  }
  
- .video-container::before {
-   content: '';
-   display: block;
-   padding-top: 56.25%; /*16:9 Aspect Ratio*/
+ .thumbnail-image {
+   width: 100%;
+   height: auto;
+   cursor: pointer; /* Show cursor as pointer when hovering over thumbnail */
  }
 @media (min-width: 576px) and (max-width:991.98px) {
    .home {
@@ -471,7 +486,9 @@
    .franchise-opportunity img {
       height: 68vh;
    }
-
+   .franchise-heading{
+      margin-top: 20px;
+   }
    .franchise-opportunity h4 {
       color: #000;
       font-family: 'Menlo';

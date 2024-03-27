@@ -1,0 +1,162 @@
+@import"../home/home.component.css";
+
+.logo img {
+    width: 100%;
+    border-radius: 0;
+}
+
+h4 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card h5 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+    border-bottom: 1px dashed #fff;
+}
+
+.padding {
+    padding: 10px;
+}
+
+.admission-form {
+    background-color: #fff;
+    height: auto;
+    border-radius: 0 50px 0 50px;
+    padding: 35px 30px 35px 30px;
+    margin-top: 30px;
+}
+
+.admission-form h3 {
+    color: #000;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.general-info-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.general-info-card h2 {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+h4 {
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+h5 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h5 span {
+    font-weight: bold;
+}
+
+.franchise img {
+    width: 65%;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.general-info-card p {
+    color: #fff;
+}
+
+.min-height {
+    min-height: 175px;
+}
+.advantage img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+    .logo img {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .padding {
+        padding: 10px;
+    }
+
+    .admission-form {
+        background-color: #fff;
+        height: auto;
+        border-radius: 0 50px 0 50px;
+        padding: 35px 30px 35px 30px;
+        margin-top: 0;
+    }
+
+    .admission-form h3 {
+        color: #000;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    h4 {
+        color: #000;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 100px;
+    }
+
+    h5 {
+        color: #000;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    h5 span {
+        font-weight: bold;
+    }
+
+    .franchise img {
+        width: 65%;
+        border-radius: 50%;
+        margin-top: 0;
+        margin-bottom: 0;
+
+    }
+
+    .general-info-card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .general-info-card h2 {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .general-info-card p {
+        color: #fff;
+    }
+
+    .min-height {
+        min-height: 175px;
+    }
+}

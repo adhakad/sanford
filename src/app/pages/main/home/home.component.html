@@ -2,18 +2,13 @@
 <div class="home">
     <div class="row">
         <div class="main-card">
-            <button class="submit-button1" mat-raised-button>Franchise Enquiry</button>
-            <button class="submit-button2" mat-raised-button>Admission Enquiry</button>
+            <button class="submit-button1" mat-raised-button routerLink="/franchise">Franchise Enquiry</button>
+            <button class="submit-button2" mat-raised-button routerLink="/admission">Admission Enquiry</button>
             <div class="banner-background">
                 <div class="owl-carousel banner-carousel">
                     <img class="banner-card" src="../../../../assets/sanford-award1.jpg" alt="">
                     <img class="banner-card" src="../../../../assets/sanford-award2.jpg" alt="">
                     <img class="banner-card" src="../../../../assets/sanford-award3.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/b1.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/b2.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/b3.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/b4.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/b5.jpg" alt="">
                 </div>
             </div>
             <div class="container-fluid side-banner">
@@ -29,18 +24,22 @@
                         <div class="row content-margin">
                             <div class="col-lg-11 title">
                                 <h2>Welcome to India’s Most Preferred Preschool Brand <span>SANFORD</span></h2>
-                                <p>SANFORD – Group Of Schools is a
-                                    brainchild of husband-wife duo S. K. Rathor & Kavita Rathor. They laid the foundation of
-                                    their first preschool in 1999 with a bouquet of attraction, concepts, and role-play
-                                    models for tiny tots based on the ‘play-way’ methodology or ‘learning by doing. After
-                                    more than 10 years of rich experience in the field, they launched their school brand
-                                    SANFORD in December 2009 based on the U. K. Concept of preschool education.</p>
+                                <p>SANFORD – Group Of Schools is a brainchild of husband-wife duo M. K. Meena & Mamta
+                                    Meena. They laid the foundation of their first preschool in 2010 with a bouquet of
+                                    attraction, concepts, and role-play models for tiny tots based on the ‘play-way’
+                                    methodology or ‘learning by doing. After more than 10 years of rich experience in
+                                    the field, they launched their school brand SANFORD in December 2018 based on the U.
+                                    K. Concept of preschool education.
+                                </p>
                                 <p class="p2">SANFORD
-                                    curriculum involves effective, time-tested elements of traditional learning infused with
+                                    curriculum involves effective, time-tested elements of traditional learning infused
+                                    with
                                     cutting-edge technology resources, which bridges the learning gap. The curriculum is
-                                    crafted in the hexagram of ‘Core Value Circle’ which helps children in the Refinement of
+                                    crafted in the hexagram of ‘Core Value Circle’ which helps children in the
+                                    Refinement of
                                     their senses, Gross Motor Development,</p>
-                                <button class="submit-button" mat-raised-button>Learn More About Us</button>
+                                <button class="learn-more" mat-raised-button routerLink="/about">Learn More About
+                                    Us</button>
                             </div>
                         </div>
                     </div>
@@ -92,6 +91,23 @@
                     </div>
                 </div>
             </div>
+            <div class="container-fluid padding-top padding-bottom">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 title text-center padding-bottom">
+                        <h2>SANFORD VIDEO <span>GALLERY</span></h2>
+                    </div>
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <div class="row">
+                            <div class="col-12 col-lg-4" *ngFor="let videoUrl of youtubeVideoSafeUrls; let i = index">
+                                <div class="video-container" (click)="redirectUser(youtubeVideoUrls[i])">
+                                    <img [src]="thumbnailUrls[i]" alt="Thumbnail Image" class="thumbnail-image">
+                                    <iframe [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container-fluid curriculam">
                 <div class="row">
                     <div class="col-lg-6">
@@ -107,7 +123,7 @@
                                 traditional learning infused with cutting-edge technology resources, which makes the
                                 teaching &learning more effective and joyful. The curriculum is crafted to help children
                                 to learn with uniquely designed activities, games & role-plays.</p>
-                            <button class="submit-button" mat-raised-button>Learn More</button>
+                            <button class="learn-more" mat-raised-button routerLink="/curriculam">Learn More</button>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -131,9 +147,7 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 title text-center mt-4">
                         <h2>THE GROWTH <span>STORY</span></h2>
-                        <p>The story, which begins 22 years back with one preschool, resulted in a well-established
-                            leading preschool brand SANFORT and writing a new chapter in its success story every day.
-                        </p>
+                        <p>The story, which begins 6 years back with one preschool, resulted in a well-established leading preschool brand SANFORD and writing a new chapter in its success story every day.</p>
                     </div>
                     <div class="col-12 col-lg-8 offset-lg-2 mt-2">
                         <img src="../../../../assets/Growth-story.jpg" alt="">
@@ -143,62 +157,69 @@
             <div class="container-fluid franchise-opportunity">
                 <div class="row title">
                     <div class="col-12 col-lg-4"><img src="../../../../assets/franchise-banner-image.png" alt=""></div>
-                    <div class="col-12 offset-0 col-lg-7 offset-lg-1 pt-3">
-                        <h2 class="text-center">FRANCHISE OPPORTUNITY</h2>
+                    <div class="col-12 offset-0 col-lg-6 offset-lg-1 px-4">
+                        <h2 class="text-center franchise-heading">FRANCHISE OPPORTUNITY</h2>
                         <h4 class="text-center">Join Hands With India’s Leading Preschool Brand</h4>
-                        <h2 class="text-center"><span style="color: rgb(242, 33, 96);">SANFORT</span></h2>
+                        <h2 class="text-center"><span style="color: rgb(242, 33, 96);">SANFORD</span></h2>
                         <p>Preschool market is growing tremendously year after year and the potential has increased
                             multifold post pandemic and National Educational Policy 2020 (NEP) also has made preschool
                             education compulsory. So, this is the best time to start a preschool.</p>
-                        <p>Since it’s inception SANFORT has been a preferred choice of parents and franchisee both. We
-                            have nurtured more than 80000 children so far with the help of our 250+ franchise partners
-                            and 3000+ workforces.</p>
-                        <p>SANFORT Franchisee has been proved an Ultra High Returns on investment business model so; we
+                        <p>Since it’s inception SANFORD has been a preferred choice of parents and franchisee both. We have nurtured more than 5000 children so far with the help of our 250+ franchise partners and 3000+ workforces.</p>
+                        <p>SANFORD Franchisee has been proved an Ultra High Returns on investment business model so; we
                             invite you to come forward to join the league of our highly successful franchise partners.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid extra-light-skyblue-color padding-top padding-bottom">
+            <!-- <div class="container-fluid extra-light-skyblue-color padding-top padding-bottom">
                 <div class="row">
-                    <div class="col-lg-10 offset-lg-1 title text-center">
+                    <div class="col-lg-10 offset-lg-1 title text-center padding-bottom">
                         <h2>SANFORD IMAGE <span>GALLERY</span></h2>
                     </div>
                     <div class="col-12 col-lg-10 offset-lg-1">
                         <div class="row">
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations1.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations1.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations2.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations2.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations3.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations3.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations4.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations4.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations5.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations5.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations7.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations7.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations8.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations8.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations15.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations15.jpg"
+                                    alt="">
                             </div>
                             <div class="col-12 col-lg-4 img-column">
-                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations9.jpg" alt="" >
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations9.jpg"
+                                    alt="">
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="container-fluid awards">
@@ -236,31 +257,54 @@
 
 
 
-
-            <div class="container-fluid">
+            <div class="container-fluid extra-light-skyblue-color padding-top padding-bottom">
                 <div class="row">
-                    <div class="col-10 offset-1">
+                    <div class="col-lg-10 offset-lg-1 title text-center padding-bottom">
+                        <h2>SANFORD IMAGE <span>GALLERY</span></h2>
+                    </div>
+                    <div class="col-12 col-lg-10 offset-lg-1">
                         <div class="row">
-                            <div class="col-12 col-lg-4 offset-lg-0">
-                                <div class="video-container" (click)="redirectUser()">
-                                    <iframe [src]="youtubeVideoUrl" frameborder="0" allowfullscreen></iframe>
-                                </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations1.jpg"
+                                    alt="">
                             </div>
-                            <div class="col-12 offset-1 col-lg-4 offset-lg-0">
-                                <div class="video-container" (click)="redirectUser()">
-                                    <iframe [src]="youtubeVideoUrl" frameborder="0" allowfullscreen></iframe>
-                                </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations2.jpg"
+                                    alt="">
                             </div>
-                            <div class="col-12 offset-1 col-lg-4 offset-lg-0">
-                                <div class="video-container" (click)="redirectUser()">
-                                    <iframe [src]="youtubeVideoUrl" frameborder="0" allowfullscreen></iframe>
-                                </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations3.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations4.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations5.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations7.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations8.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations15.jpg"
+                                    alt="">
+                            </div>
+                            <div class="col-12 col-lg-4 img-column">
+                                <img src="../../../../assets/our-system/events-celebrations/events-celebrations9.jpg"
+                                    alt="">
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>

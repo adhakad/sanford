@@ -37,27 +37,34 @@ export class HomeComponent implements OnInit {
   loader: Boolean = true;
   schoolInfo: any;
   showModal: Boolean = false;
-  students = [
-    { id: 1, name: 'Student 1' },
-    { id: 2, name: 'Student 2' },
-    // Add more students as needed
+
+  youtubeVideoUrls: string[] = [
+    "https://www.youtube.com/watch?v=FK0vHW42v_0",
+    "https://www.youtube.com/watch?v=0SdcTnZAMEU",
+    "https://www.youtube.com/watch?v=jnXSGbVTnUg",
+    "https://www.youtube.com/watch?v=w1L5B8bHqP0",
+    "https://www.youtube.com/watch?v=7K5P17QQvaE",
+    "https://www.youtube.com/watch?v=_c5khMsUNto",
+    "https://www.youtube.com/watch?v=i31E6h_2JIE",
+    "https://www.youtube.com/watch?v=bdZEmVMAzoI",
+    "https://www.youtube.com/watch?v=l3eAJM1hjMQ",
+    // Add more video URLs as needed
   ];
-  youtubeVideoUrl: SafeResourceUrl;
-  thumbnailImageUrl: SafeUrl;
+  thumbnailUrls: SafeUrl[] = [];
+  youtubeVideoSafeUrls: SafeResourceUrl[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private sanitizer: DomSanitizer, private schoolService: SchoolService, private printPdfService: PrintPdfService, private bannerService: BannerService, private topperService: TopperService, private testimonialService: TestimonialService, private adsService: AdsService, private studentAuthService: StudentAuthService) {
-    const youtubeVideoLink = "https://www.youtube.com/watch?v=FK0vHW42v_0";
-    const videoId = this.getVideoIdFromUrl(youtubeVideoLink);
 
-    // Construct YouTube video URL
-    const videoUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
 
-    // Replace these URLs with actual YouTube video URL and thumbnail URL
-    const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private sanitizer: DomSanitizer, private schoolService: SchoolService, private printPdfService: PrintPdfService, private bannerService: BannerService, private topperService: TopperService, private testimonialService: TestimonialService, private adsService: AdsService, private studentAuthService: StudentAuthService) {
+    this.youtubeVideoUrls.forEach(url => {
+      const videoId = this.getVideoIdFromUrl(url);
+      const videoUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
+      const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
-    // Sanitize URLs
-    this.youtubeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
-    this.thumbnailImageUrl = this.sanitizer.bypassSecurityTrustUrl(thumbnailUrl);
+      // Sanitize URLs
+      this.youtubeVideoSafeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl));
+      this.thumbnailUrls.push(this.sanitizer.bypassSecurityTrustUrl(thumbnailUrl));
+    });
   }
 
   async ngOnInit() {
@@ -76,11 +83,9 @@ export class HomeComponent implements OnInit {
     return null;
   }
 
-  redirectUser() {
-    // Redirect user to YouTube video link
-    window.location.href = this.youtubeVideoUrl.toString();
+  redirectUser(videoUrl: string) {
+    window.location.href = videoUrl;
   }
-
   getLoggedInStudentInfo() {
     this.loggedInStudentInfo = this.studentAuthService.getLoggedInStudentInfo();
     if (this.loggedInStudentInfo) {
@@ -99,12 +104,20 @@ export class HomeComponent implements OnInit {
           loop: true,
           dots: false,
           margin: 0,
-          nav: true,
           responsiveClass: true,
-          navText: [
-            "<button style='position:absolute;left:12px;background:#e9a621e9;color:#fff;border:none;border-radius:50%;width:45px;height:45px;top:50%;transform:translateY(-50%);'><mat-icon style='margin-top:2px;' class='material-icons'>keyboard_arrow_left</mat-icon></button>",
-            "<button style='position:absolute;right:12px;background:#e9a621e9;color:#fff;border:none;border-radius:50%;width:45px;height:45px;top:50%;transform:translateY(-50%);'><mat-icon style='margin-top:2px;' class='material-icons'>keyboard_arrow_right</mat-icon></button>"
-          ],
+          responsive: {
+            600: {
+              items: 1,
+            },
+            1500: {
+              nav: true,
+              navText: [
+                "<button style='position:absolute;left:12px;background:#e9a621e9;color:#fff;border:none;border-radius:50%;width:45px;height:45px;top:50%;transform:translateY(-50%);'><mat-icon style='margin-top:2px;' class='material-icons'>keyboard_arrow_left</mat-icon></button>",
+                "<button style='position:absolute;right:12px;background:#e9a621e9;color:#fff;border:none;border-radius:50%;width:45px;height:45px;top:50%;transform:translateY(-50%);'><mat-icon style='margin-top:2px;' class='material-icons'>keyboard_arrow_right</mat-icon></button>"
+              ],
+            },
+          }
+          
         });
         jQuery('.award-carousel').owlCarousel({
           items: 2,
@@ -244,81 +257,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-
-
-
-
-
   closeModal() {
     this.showModal = false;
-  }
-  bulkPrint() {
-    this.showModal = true;
-  }
-  printStudentData() {
-    const printContent = this.getPrintContent();
-    this.printPdfService.printContent(printContent);
-  }
-  private getPrintContent(): string {
-    let printHtml = '<html>';
-    printHtml += '<head>';
-    printHtml += '<style>';
-    printHtml += 'body { margin: 0; padding: 0; }'; // Set body styles and hide horizontal overflow
-    printHtml += 'div { margin: 0; padding: 0;}';
-    printHtml += '.custom-container {font-family: Arial, sans-serif;overflow: auto;}';
-    printHtml += '.table-container {background-color: #fff;border: none;}';
-    printHtml += '.school-name {display: flex; align-items: center; justify-content: center; text-align: center; }';
-    printHtml += '.address{margin-top: -65px;}';
-    printHtml += '.address p{margin-top: -5px !important;}';
-    printHtml += '.logo { height: 100px; }';
-    printHtml += '.school-name h3 { color: #2e2d6a !important; font-size: 20px !important; margin-left: 15px;margin-top:-65px !important; margin-bottom: 0 !important; }';
-    printHtml += '.info-table {width:100%;color: #2e2d6a !important;border: none;font-size: 1em;letter-spacing: .25px;margin-top: 5vh;margin-bottom: 5vh;display: inline-table;}';
-    printHtml += '.table-container .info-table th, .table-container .info-table td{color: #2e2d6a !important;text-align:center}';
-    printHtml += '.title-lable {max-height: 45px;text-align: center;margin-bottom: 15px;border:1px solid #2e2d6a;border-radius: 5px;margin-top: 25px;}';
-    printHtml += '.title-lable p {color: #2e2d6a !important;font-size: 16px;font-weight: bold;letter-spacing: 1px;}';
-    printHtml += '.codes .school-code  {margin-right:65%;}';
-    // printHtml += '.codes .school-aff p {margin-right:65%;}';
-    printHtml += '.custom-table {width: 100%;color: #2e2d6a !important;border-collapse:collapse;font-size: 1em;letter-spacing: .25px;margin-bottom: 20px;display: inline-table;border-radius:5px}';
-    printHtml += '.custom-table th{height:38px;text-align: center;border:1px solid #2e2d6a;}';
-    printHtml += '.custom-table tr{height:38px;}';
-    printHtml += '.custom-table td {text-align: center;border:1px solid #2e2d6a;}';
-    printHtml += '.text-bold { font-weight: bold;}';
-    printHtml += 'p {color: #2e2d6a !important;font-size:12px;}'
-    printHtml += 'h4 {color: #2e2d6a !important;}'
-
-    printHtml += '@media print {';
-    printHtml += '  body::after {';
-    printHtml += '    content: "GUNA PUBLIC HIGHER SECONDARY SCHOOL";'; // Change "Watermark" to your desired text or image
-    printHtml += '    position: fixed;';
-    printHtml += '    top: 45%;';
-    printHtml += '    left:10%;';
-    // printHtml += '    transform: translate(-50%, -50%);';
-    printHtml += '    font-size: 20px;';
-    printHtml += '    font-weight: bold;';
-    printHtml += '    font-family: Arial, sans-serif;';
-    printHtml += '    color: rgba(0, 0, 0, 0.1);';
-    printHtml += '    pointer-events: none;';
-    printHtml += '  }';
-    printHtml += '}';
-    // Add your additional styles here
-    printHtml += '</style>';
-    printHtml += '</head>';
-    printHtml += '<body>';
-
-    this.students.forEach((student, index) => {
-      const studentElement = document.getElementById(`student-${student.id}`);
-      if (studentElement) {
-        printHtml += studentElement.outerHTML;
-
-        // Add a page break after each student except the last one
-        if (index < this.students.length - 1) {
-          printHtml += '<div style="page-break-after: always;"></div>';
-        }
-      }
-    });
-
-    printHtml += '</body></html>';
-
-    return printHtml;
   }
 }

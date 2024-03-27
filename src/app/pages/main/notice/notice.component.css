@@ -15,7 +15,7 @@
 }
 .main-card h3 {
     /* color: #3837679a; */
-    color: #4e4caacd;
+    color: #33558b;
     margin-top: 2vh;
     font-size: 18px;
     font-weight: 500;
@@ -40,7 +40,7 @@ mat-expansion-panel-header {
     height: auto;
 }
 mat-panel-title {
-    color: #4e4caacd !important;
+    color: #33558b !important;
     box-shadow: none !important;
 }
 @media (min-width: 576px) and (max-width:991.98px){

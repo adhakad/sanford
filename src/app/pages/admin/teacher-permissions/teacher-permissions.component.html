@@ -46,7 +46,7 @@
                     <td>
                       <ng-container *ngIf="teacher.resultPermission.status==true && teacher.resultPermission.classes[0]!==0">
                         <ng-container *ngFor="let cls of teacher.resultPermission.classes ;let i = index;">
-                          <p class="fw-normal mb-1" style="color: #8d6dff;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
+                          <p class="fw-normal mb-1" style="color: #4881dc;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
                         </ng-container>
                       </ng-container>
                       <ng-container
@@ -57,7 +57,7 @@
                     <td>
                       <ng-container *ngIf="teacher.admitCardPermission.status==true && teacher.admitCardPermission.classes[0]!==0">
                         <ng-container *ngFor="let cls of teacher.admitCardPermission.classes;let i = index;">
-                          <p class="fw-normal mb-1" style="color: #8d6dff;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
+                          <p class="fw-normal mb-1" style="color: #4881dc;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
                         </ng-container>
                       </ng-container>
                       <ng-container
@@ -68,7 +68,7 @@
                     <td>
                       <ng-container *ngIf="teacher.studentPermission.status==true && teacher.studentPermission.classes[0]!==0">
                         <ng-container *ngFor="let cls of teacher.studentPermission.classes;let i = index;">
-                          <p class="fw-normal mb-1" style="color: #8d6dff;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
+                          <p class="fw-normal mb-1" style="color: #4881dc;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
                         </ng-container>
                       </ng-container>
                       <ng-container
@@ -79,7 +79,7 @@
                     <td>
                       <ng-container *ngIf="teacher.admissionPermission.status==true && teacher.admissionPermission.classes[0]!==0">
                         <ng-container *ngFor="let cls of teacher.admissionPermission.classes;let i = index;">
-                          <p class="fw-normal mb-1" style="color: #8d6dff;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
+                          <p class="fw-normal mb-1" style="color: #4881dc;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
                         </ng-container>
                       </ng-container>
                       <ng-container
@@ -90,7 +90,7 @@
                     <td>
                       <ng-container *ngIf="teacher.feeCollectionPermission.status==true && teacher.feeCollectionPermission.classes[0]!==0">
                         <ng-container *ngFor="let cls of teacher.feeCollectionPermission.classes;let i = index;">
-                          <p class="fw-normal mb-1" style="color: #8d6dff;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
+                          <p class="fw-normal mb-1" style="color: #4881dc;">{{cls | classSuffix}}&nbsp;&nbsp; </p>
                         </ng-container>
                       </ng-container>
                       <ng-container

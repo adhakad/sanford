@@ -1,75 +1,128 @@
 @import"../home/home.component.css";
-.card{
+
+.card {
     background-color: rgb(249, 209, 224);
     height: auto;
     padding: 30px;
     border: none;
 }
-.card h4{
+
+h4 {
     color: #000;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 15px;
 }
-.card h5{
+
+.card h5 {
     color: #000;
     font-size: 16px;
     font-weight: 400;
     margin-top: 15px;
-    border-bottom: 1px dotted #fff;
+    border-bottom: 1px dashed #fff;
 }
-.padding{
+
+.padding {
     padding: 10px;
 }
-.admission-form{
+
+.admission-form {
     background-color: #fff;
     height: auto;
-    border-radius:  0 50px 0 50px;
-    padding:  35px 30px 35px 30px;
+    border-radius: 0 50px 0 50px;
+    padding: 35px 30px 35px 30px;
     margin-top: 30px;
 }
-.admission-form h3{
+
+.admission-form h3 {
     color: #000;
 }
-.submit-button{
+
+.submit-button {
     width: 100%;
 }
 
+.general-info-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.general-info-card h2 {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.general-info-card p {
+    color: #fff;
+}
+
+.min-height {
+    min-height: 175px;
+}
+
 @media (min-width: 992px) {
-    .card{
+    .card {
         background-color: rgb(249, 209, 224);
         height: auto;
         padding: 30px;
         border: none;
         margin-top: 100px;
     }
-    .card h4{
+
+    .card h4 {
         color: #000;
         font-size: 20px;
         font-weight: 500;
         margin-bottom: 15px;
     }
-    .card h5{
+
+    .card h5 {
         color: #000;
         font-size: 16px;
         font-weight: 400;
         margin-top: 15px;
         border-bottom: 1px dotted #fff;
     }
-    .padding{
+
+    .padding {
         padding: 10px;
     }
-    .admission-form{
+
+    .admission-form {
         background-color: #fff;
         height: auto;
-        border-radius:  0 50px 0 50px;
-        padding:  35px 30px 35px 30px;
+        border-radius: 0 50px 0 50px;
+        padding: 35px 30px 35px 30px;
         margin-top: 0;
     }
-    .admission-form h3{
+
+    .admission-form h3 {
         color: #000;
     }
-    .submit-button{
+
+    .submit-button {
         width: 100%;
+    }
+
+    .general-info-card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .general-info-card h2 {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .general-info-card p {
+        color: #fff;
+    }
+
+    .min-height {
+        min-height: 175px;
     }
 }
