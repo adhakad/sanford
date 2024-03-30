@@ -290,14 +290,10 @@ let CreateStudent = async (req, res, next) => {
 let CreateStudentAdmissionEnquiry = async (req, res, next) => {
     const currentDateIst = DateTime.now().setZone('Asia/Kolkata');
     const doae = currentDateIst.toFormat('dd-MM-yyyy');
-    let { name, session, stream, dob, gender, category, religion, nationality, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, } = req.body;
-    let className = req.body.class;
-    if (stream === "stream") {
-        stream = "N/A";
-    }
-    dob = DateTime.fromISO(dob).toFormat("dd-MM-yyyy");
+    let { session,name, contact, city,message } = req.body;
+    
     const studentData = {
-        name, session, stream, class: className, dob: dob, doae: doae, gender, category, religion, nationality, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, 
+        session,name, contact, city,message, doae: doae
     }
     try {
         const checkContact = await AdmissionEnquiryModel.findOne({ name: name, contact: contact });
@@ -375,8 +371,8 @@ let CreateBulkStudentRecord = async (req, res, next) => {
             createdBy: createdBy,
         });
     }
-    const session = await StudentModel.startSession();
-    session.startTransaction();
+    // const session = await StudentModel.startSession();
+    // session.startTransaction();
     try {
 
         if (studentData.length > 100) {
@@ -486,24 +482,24 @@ let CreateBulkStudentRecord = async (req, res, next) => {
         }
 
         if (createStudent && studentFeesData.length > 0) {
-            const createStudentFeesData = await FeesCollectionModel.create(studentFeesData, { session });
+            const createStudentFeesData = await FeesCollectionModel.create(studentFeesData);
 
             if (createStudentFeesData) {
-                await session.commitTransaction();
-                session.endSession();
+                // await session.commitTransaction();
+                // session.endSession();
                 return res.status(200).json('Student created successfully.');
             }
         }
 
         // If anything goes wrong, roll back the transaction
-        await session.abortTransaction();
-        session.endSession();
-        return res.status(500).json('Error creating student and fees data.');
+        // await session.abortTransaction();
+        // session.endSession();
+        // return res.status(500).json('Error creating student and fees data.');
     } catch (error) {
         // Handle any errors that occurred during the transaction
-        await session.abortTransaction();
-        session.endSession();
-        console.error(error);
+        // await session.abortTransaction();
+        // session.endSession();
+        // console.error(error);
         return res.status(500).json('Internal Server Error!');
     }
 }

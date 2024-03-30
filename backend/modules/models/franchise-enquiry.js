@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 
-const AdmissionEnquiryModel = mongoose.model('admission-enquiry', {
+const FranchiseEnquiryModel = mongoose.model('Franchise-enquiry', {
     session: {
         type: String,
         required: true,
@@ -22,12 +22,22 @@ const AdmissionEnquiryModel = mongoose.model('admission-enquiry', {
         required: true,
         trim: true,
     },
+    state: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     city: {
         type: String,
         required: true,
         trim: true,
     },
-    message:{
+    investement:{
+        type: Number,
+        required: true,
+        trim: true,
+    },
+    message: {
         type: String,
         required: true,
         trim: true,
@@ -36,5 +46,6 @@ const AdmissionEnquiryModel = mongoose.model('admission-enquiry', {
         type: String,
         required: true,
         trim: true,
-    },});
-module.exports = AdmissionEnquiryModel;
+    },
+});
+module.exports = FranchiseEnquiryModel;

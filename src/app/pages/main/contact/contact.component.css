@@ -1,1 +1,13 @@
-@import'../notice/notice.component.css';
+@import"../home/home.component.css";
+.contact-card{
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+    padding:  50px 30px 30px 50px;
+}
+
+.contact-card h4{
+    color: #000;
+    font-size: 18px;
+    font-weight: 500px;
+}

@@ -8,7 +8,7 @@
  }
 .facilities .program-card {
     background-color: #fff;
-    height: 575px;
+    height: auto;
     min-height: 575px;
     margin: 5px;
  }
@@ -43,7 +43,6 @@
    }
   .facilities .program-card {
       background-color: #fff;
-      height: 575px;
       min-height: 575px;
       margin: 5px;
    }

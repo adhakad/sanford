@@ -3,11 +3,6 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 declare var jQuery: any;
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-// import { Banner } from 'src/app/modal/banner.model';
-// import { Teacher } from 'src/app/modal/teacher.model';
-// import { Ads } from 'src/app/modal/ads.model';
-// import { Topper } from 'src/app/modal/topper.model';
-// import { Testimonial } from 'src/app/modal/testimonial.model';
 import { environment } from 'src/environments/environment';
 import { BannerService } from 'src/app/services/banner.service';
 import { AdsService } from 'src/app/services/ads.service';
@@ -42,12 +37,12 @@ export class HomeComponent implements OnInit {
     "https://www.youtube.com/watch?v=FK0vHW42v_0",
     "https://www.youtube.com/watch?v=0SdcTnZAMEU",
     "https://www.youtube.com/watch?v=jnXSGbVTnUg",
-    "https://www.youtube.com/watch?v=w1L5B8bHqP0",
-    "https://www.youtube.com/watch?v=7K5P17QQvaE",
-    "https://www.youtube.com/watch?v=_c5khMsUNto",
-    "https://www.youtube.com/watch?v=i31E6h_2JIE",
-    "https://www.youtube.com/watch?v=bdZEmVMAzoI",
-    "https://www.youtube.com/watch?v=l3eAJM1hjMQ",
+    // "https://www.youtube.com/watch?v=w1L5B8bHqP0",
+    // "https://www.youtube.com/watch?v=7K5P17QQvaE",
+    // "https://www.youtube.com/watch?v=_c5khMsUNto",
+    // "https://www.youtube.com/watch?v=i31E6h_2JIE",
+    // "https://www.youtube.com/watch?v=bdZEmVMAzoI",
+    // "https://www.youtube.com/watch?v=l3eAJM1hjMQ",
     // Add more video URLs as needed
   ];
   thumbnailUrls: SafeUrl[] = [];

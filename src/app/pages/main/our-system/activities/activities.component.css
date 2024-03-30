@@ -6,6 +6,7 @@
 }
 .activities img{
     width: 100%;
+    margin-bottom: 20px;
 }
 .activities h2{
     font-size: 35px;
@@ -19,7 +20,7 @@
 }
 .facilities .program-card {
     background-color: #fff;
-    height: 575px;
+    height: auto;
     min-height: 575px;
     margin: 0 !important;
  }
@@ -63,7 +64,6 @@
     }
     .facilities .program-card {
         background-color: #fff;
-        height: 575px;
         min-height: 575px;
         margin: 0 !important;
      }

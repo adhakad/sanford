@@ -88,6 +88,27 @@ h5 span {
     width: 100%;
     margin-bottom: 10px;
 }
+.support-card{
+    width: 100%;
+    min-height: 150px;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 15px;
+}
+.support-card .mat-icon{
+    color: #fff;
+}
+.support-card h3{
+    color: #fff;
+}
+.support-card p{
+    position: relative;
+    font-size: 12px;
+    color: #fff;
+}
+.awards{
+   height: auto;
+}
 
 @media (min-width: 992px) {
     .logo img {
@@ -158,5 +179,12 @@ h5 span {
 
     .min-height {
         min-height: 175px;
+    }
+    .support-card{
+        width: 100%;
+        min-height: 150px;
+        margin: 25px;
+        padding: 20px;
+        border-radius: 15px;
     }
 }
