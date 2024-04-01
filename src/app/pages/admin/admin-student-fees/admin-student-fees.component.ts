@@ -53,7 +53,7 @@ export class AdminStudentFeesComponent implements OnInit {
       studentId: [''],
       feesAmount: [''],
       feesInstallment: [''],
-      collectedBy:[''],
+      createdBy:[''],
     });
   }
 
@@ -216,7 +216,7 @@ export class AdminStudentFeesComponent implements OnInit {
         })
       } else {
         this.feesForm.value.class = this.singleStudent.class;
-        this.feesForm.value.collectedBy = "Admin";
+        this.feesForm.value.createdBy = "Admin";
         this.feesForm.value.studentId = this.singleStudent.studentId;
         this.feesForm.value.feesInstallment = this.paybleInstallment[0][0];
         this.feesForm.value.feesAmount = this.paybleInstallment[0][1];

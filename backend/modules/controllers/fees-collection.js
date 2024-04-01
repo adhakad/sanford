@@ -38,7 +38,7 @@ let GetAllStudentFeesCollectionByClass = async (req, res, next) => {
 
 let CreateFeesCollection = async (req, res, next) => {
     let className = req.body.class;
-    let { studentId, feesInstallment, feesAmount,collectedBy } = req.body;
+    let { studentId, feesInstallment, feesAmount,createdBy } = req.body;
     let receiptNo = Math.floor(Math.random() * 899999 + 100000);
     const currentDateIst = DateTime.now().setZone('Asia/Kolkata');
     const istDateTimeString = currentDateIst.toFormat('dd-MM-yyyy hh:mm:ss a');
@@ -81,11 +81,11 @@ let CreateFeesCollection = async (req, res, next) => {
             feesInstallment: feesInstallment,
             feesAmount: feesAmount,
             paymentDate: istDateTimeString,
-            collectedBy:collectedBy
+            createdBy:createdBy
         }
         const updatedDocument = await FeesCollectionModel.findOneAndUpdate(
-            { _id: id, 'installment': { $elemMatch: { [feesInstallment]: { $exists: true } } }, 'receipt': { $elemMatch: { [feesInstallment]: { $exists: true } } }, 'paymentDate': { $elemMatch: { [feesInstallment]: { $exists: true } } },'collectedBy': { $elemMatch: { [feesInstallment]: { $exists: true } } } },
-            { $set: { [`installment.$.${feesInstallment}`]: feesAmount, [`receipt.$.${feesInstallment}`]: receiptNo, [`paymentDate.$.${feesInstallment}`]: istDateTimeString,[`collectedBy.$.${feesInstallment}`]: collectedBy, paidFees: paidFees, dueFees: dueFees } },
+            { _id: id, 'installment': { $elemMatch: { [feesInstallment]: { $exists: true } } }, 'receipt': { $elemMatch: { [feesInstallment]: { $exists: true } } }, 'paymentDate': { $elemMatch: { [feesInstallment]: { $exists: true } } },'createdBy': { $elemMatch: { [feesInstallment]: { $exists: true } } } },
+            { $set: { [`installment.$.${feesInstallment}`]: feesAmount, [`receipt.$.${feesInstallment}`]: receiptNo, [`paymentDate.$.${feesInstallment}`]: istDateTimeString,[`createdBy.$.${feesInstallment}`]: createdBy, paidFees: paidFees, dueFees: dueFees } },
             { new: true }
         );
         if (updatedDocument) {

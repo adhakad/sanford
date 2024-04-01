@@ -149,7 +149,7 @@ let CreateStudent = async (req, res, next) => {
     let receiptNo = Math.floor(Math.random() * 899999 + 100000);
     const currentDateIst = DateTime.now().setZone('Asia/Kolkata');
     const istDateTimeString = currentDateIst.toFormat('dd-MM-yyyy hh:mm:ss a');
-    let { name, rollNumber, admissionClass, aadharNumber, samagraId,udiseNumber, session, admissionFees, admissionFeesPaymentType, admissionType, stream, admissionNo, dob, doa, gender, category, religion, nationality,bankAccountNo,bankIfscCode, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification,createdBy } = req.body;
+    let { name, rollNumber, admissionClass, aadharNumber, janAadharNumber,udiseNumber, session, admissionFees, admissionFeesPaymentType, admissionType, stream, admissionNo, dob, doa, gender, category, religion, nationality,bankAccountNo,bankIfscCode, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification,createdBy } = req.body;
     let className = req.body.class;
     let onlineAdmissionStatus = req.body.status;
     let onlineAdmObjId = req.body._id;
@@ -178,7 +178,7 @@ let CreateStudent = async (req, res, next) => {
         dob = DateTime.fromISO(dob).toFormat("dd-MM-yyyy");
     }
     const studentData = {
-        name, rollNumber, aadharNumber, samagraId,udiseNumber, otp, session, admissionType, stream, admissionNo, class: className, admissionClass, dob: dob, doa: doa, gender, category, religion, nationality,bankAccountNo,bankIfscCode, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, createdBy
+        name, rollNumber, aadharNumber, janAadharNumber,udiseNumber, otp, session, admissionType, stream, admissionNo, class: className, admissionClass, dob: dob, doa: doa, gender, category, religion, nationality,bankAccountNo,bankIfscCode, contact, address, lastSchool, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, createdBy
     }
     try {
         const checkFeesStr = await FeesStructureModel.findOne({ class: className });
@@ -193,9 +193,9 @@ let CreateStudent = async (req, res, next) => {
         if (checkAadharNumber) {
             return res.status(400).json(`Aadhar card number already exist !`);
         }
-        const checkSamagraId = await StudentModel.findOne({ samagraId: samagraId });
-        if (checkSamagraId) {
-            return res.status(400).json(`Samagra id already exist !`);
+        const checkjanAadharNumber = await StudentModel.findOne({ janAadharNumber: janAadharNumber });
+        if (checkjanAadharNumber) {
+            return res.status(400).json(`Jan aadhar number already exist !`);
         }
         const checkAdmissionNo = await StudentModel.findOne({ admissionNo: admissionNo });
         if (checkAdmissionNo) {
@@ -240,7 +240,7 @@ let CreateStudent = async (req, res, next) => {
             receipt: installment,
             installment: installment,
             paymentDate: installment,
-            collectedBy: installment
+            createdBy: installment
         }
         if (admissionType == 'New' && admissionFeesPaymentType == 'Immediate') {
             studentFeesData.admissionFeesReceiptNo = receiptNo,
@@ -342,7 +342,7 @@ let CreateBulkStudentRecord = async (req, res, next) => {
             name: student.name,
             rollNumber: student.rollNumber,
             aadharNumber: student.aadharNumber,
-            samagraId: student.samagraId,
+            janAadharNumber: student.janAadharNumber,
             udiseNumber:student.udiseNumber,
             otp: otp,
             session: student.session,
@@ -373,6 +373,7 @@ let CreateBulkStudentRecord = async (req, res, next) => {
     }
     // const session = await StudentModel.startSession();
     // session.startTransaction();
+    // console.log(studentData)
     try {
 
         if (studentData.length > 100) {
@@ -394,19 +395,19 @@ let CreateBulkStudentRecord = async (req, res, next) => {
         }
         const existRecords = await StudentModel.find({}).lean();
         const duplicateAadharNumber = [];
-        const duplicateSamagraId = [];
+        const duplicatejanAadharNumber = [];
         const duplicateAdmissionNo = [];
         for (const student of studentData) {
-            const { admissionNo, aadharNumber, samagraId, } = student;
+            const { admissionNo, aadharNumber, janAadharNumber, } = student;
             const aadharNumberExists = existRecords.some(record => record.aadharNumber == aadharNumber);
-            const samagraIdExists = existRecords.some(record => record.samagraId == samagraId);
+            const janAadharNumberExists = existRecords.some(record => record.janAadharNumber == janAadharNumber);
             const admissionNoExists = existRecords.some(record => record.admissionNo == admissionNo);
 
             if (aadharNumberExists) {
                 duplicateAadharNumber.push(aadharNumber);
             }
-            if (samagraIdExists) {
-                duplicateSamagraId.push(samagraId);
+            if (janAadharNumberExists) {
+                duplicatejanAadharNumber.push(janAadharNumber);
             }
             if (admissionNoExists) {
                 duplicateAdmissionNo.push(admissionNo);
@@ -416,9 +417,9 @@ let CreateBulkStudentRecord = async (req, res, next) => {
             const spreadAadharNumber = duplicateAadharNumber.join(', ');
             return res.status(400).json(`Aadhar card number(s) ${spreadAadharNumber} already exist !`);
         }
-        if (duplicateSamagraId.length > 0) {
-            const spreadSamagraId = duplicateSamagraId.join(', ');
-            return res.status(400).json(`Samagra id number(s) ${spreadSamagraId} already exist !`);
+        if (duplicatejanAadharNumber.length > 0) {
+            const spreadjanAadharNumber = duplicatejanAadharNumber.join(', ');
+            return res.status(400).json(`Jan aadhar number(s) ${spreadjanAadharNumber} already exist !`);
         }
         if (duplicateAdmissionNo.length > 0) {
             const spreadAdmissionNo = duplicateAdmissionNo.join(', ');
@@ -450,7 +451,7 @@ let CreateBulkStudentRecord = async (req, res, next) => {
             });
         });
 
-        const createStudent = await StudentModel.create(studentData, { session });
+        const createStudent = await StudentModel.create(studentData);
 
         let admissionFees = checkFeesStr.admissionFees;
         let totalFees = checkFeesStr.totalFees;
@@ -480,7 +481,6 @@ let CreateBulkStudentRecord = async (req, res, next) => {
 
             studentFeesData.push(feesObject);
         }
-
         if (createStudent && studentFeesData.length > 0) {
             const createStudentFeesData = await FeesCollectionModel.create(studentFeesData);
 
@@ -494,12 +494,11 @@ let CreateBulkStudentRecord = async (req, res, next) => {
         // If anything goes wrong, roll back the transaction
         // await session.abortTransaction();
         // session.endSession();
-        // return res.status(500).json('Error creating student and fees data.');
+        return res.status(500).json('Error creating student and fees data.');
     } catch (error) {
         // Handle any errors that occurred during the transaction
         // await session.abortTransaction();
         // session.endSession();
-        // console.error(error);
         return res.status(500).json('Internal Server Error!');
     }
 }
@@ -507,9 +506,9 @@ let CreateBulkStudentRecord = async (req, res, next) => {
 let UpdateStudent = async (req, res, next) => {
     try {
         const id = req.params.id;
-        let { name, rollNumber, aadharNumber, samagraId,udiseNumber, session, admissionType, stream, admissionNo, dob, gender, category, religion, nationality, contact, address, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, } = req.body;
+        let { name, rollNumber, aadharNumber,janAadharNumber,udiseNumber, session, admissionType, stream, admissionNo, dob, gender, category, religion, nationality, contact, address, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification, } = req.body;
         const studentData = {
-            name, rollNumber, aadharNumber, samagraId,udiseNumber, otp, session, admissionType, stream, admissionNo, class: className, dob: dob, doa: doa, gender, category, religion, nationality, contact, address, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification,
+            name, rollNumber, aadharNumber, janAadharNumber,udiseNumber, otp, session, admissionType, stream, admissionNo, class: className, dob: dob, doa: doa, gender, category, religion, nationality, contact, address, fatherName, fatherQualification, parentsOccupation, parentsContact, parentsAnnualIncome, motherName, motherQualification,
         }
         const updateStudent = await StudentModel.findByIdAndUpdate(id, { $set: studentData }, { new: true });
         return res.status(200).json('Student update successfully.');

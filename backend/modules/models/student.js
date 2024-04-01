@@ -76,7 +76,6 @@ const StudentModel = mongoose.model('student', {
     udiseNumber: {
         type: Number,
         trim: true,
-        unique:true,
 
     },
     aadharNumber: {
@@ -86,11 +85,9 @@ const StudentModel = mongoose.model('student', {
         unique:true,
 
     },
-    samagraId: {
+    janAadharNumber: {
         type: Number,
         trim: true,
-        required:true,
-        unique:true,
 
     },
     bankAccountNo:{
