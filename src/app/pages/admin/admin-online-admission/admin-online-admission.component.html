@@ -21,10 +21,11 @@
                                     <tr class="text-muted">
                                         <th>No.</th>
                                         <th>Name</th>
-                                        <th>Father Name</th>
+                                        <th>Email</th>
                                         <th>Contact</th>
-                                        <th>Admission</th>
-                                        <th>Admission Form</th>
+                                        <th>City/Town</th>
+                                        <th>Enquiry Date</th>
+                                        <th>Message</th>
                                         <th>Remove</th>
                                     </tr>
                                 </thead>
@@ -37,29 +38,19 @@
                                             <p class="mb-0">{{admissionEnquiry.name}}</p>
                                         </td>
                                         <td>
-                                            <p class="mb-0">{{admissionEnquiry.fatherName}}</p>
+                                            <p class="mb-0">{{admissionEnquiry.email}}</p>
                                         </td>
                                         <td>
                                             <p class="mb-0">{{admissionEnquiry.contact}}</p>
                                         </td>
                                         <td>
-                                            <a class="mb-0 status-active" *ngIf="admissionEnquiry.status=='Complete'"
-                                                href="javascript:void(0)">{{admissionEnquiry.status}}</a>
-                                            <a class="mb-0 status-inactive" *ngIf="admissionEnquiry.status=='Pending'"
-                                                href="javascript:void(0)">{{admissionEnquiry.status}}</a>
+                                            <p class="mb-0">{{admissionEnquiry.city}}</p>
                                         </td>
-                                        <td class="mb-0">
-                                            <button
-                                                style="background-color: transparent;color: #4881dc;border: 1px solid #4881dc;"
-                                                class="submit-button" *ngIf="admissionEnquiry.status=='Pending'"
-                                                mat-raised-button
-                                                (click)="updateAdmissionEnquiryModel(admissionEnquiry)">Form
-                                                Open</button>
-                                            <button class="submit-button" mat-raised-button
-                                                *ngIf="admissionEnquiry.status=='Complete'"
-                                                [disabled]="admissionEnquiry.status=='Complete'"
-                                                style="background-color: transparent;"><span
-                                                    class="status-active">Submitted</span></button>
+                                        <td>
+                                            <p class="mb-0">{{admissionEnquiry.doae}}</p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0">{{admissionEnquiry.message}}</p>
                                         </td>
                                         <td class="mb-0">
                                             <mat-icon

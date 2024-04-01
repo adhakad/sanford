@@ -103,7 +103,6 @@ export class AdminOnlineAdmissionComponent implements OnInit {
       this.studentService.studentAdmissionEnquiryPagination(params).subscribe((res: any) => {
         if (res) {
           this.admissionEnquiryInfo = res.admissionEnquiryList;
-
           this.number = params.page;
           this.paginationValues.next({ type: 'page-init', page: params.page, totalTableRecords: res.countAdmissionEnquiry });
           return resolve(true);
