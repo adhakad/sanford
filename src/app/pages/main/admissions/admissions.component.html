@@ -45,32 +45,82 @@
                             <div class="col-lg-8 offset-lg-2">
                                 <div class="admission-form text-center">
                                     <h3>ADMISSIONS OPEN FOR AY 24–25</h3>
-                                    <form>
+                                    <form [formGroup]="studentForm" (ngSubmit)="studentAddUpdate()">
                                         <div class="row">
+
+                                            <div *ngIf="successMsg && !errorCheck">
+                                                <p class="success-message">{{successMsg}}</p>
+                                            </div>
+                                            <div *ngIf="errorCheck && !successMsg">
+                                                <p class="error-message">{{errorMsg}}</p>
+                                            </div>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Name</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="name">
+                                                <mat-error
+                                                    *ngIf="studentForm.get('name')?.hasError('required') && studentForm.get('name')?.touched">
+                                                    Name is required
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="studentForm.get('name')?.hasError('pattern') && studentForm.get('name')?.touched">
+                                                    Please enter a valid Name (only letters and spaces are allowed)
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Email</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="email">
+                                                <mat-error
+                                                    *ngIf="studentForm.get('email')?.hasError('required') && studentForm.get('email')?.touched">
+                                                    Email is required
+                                                </mat-error>
+                                                <mat-error *ngIf="studentForm.get('email')?.hasError('email')">
+                                                    Invalid email format
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Mobile</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="number" formControlName="contact">
+                                                <mat-error
+                                                    *ngIf="studentForm.get('contact')?.hasError('required') && studentForm.get('contact')?.touched">
+                                                    Mobile number is required
+                                                </mat-error>
+                                                <mat-error *ngIf="studentForm.get('contact')?.hasError('minlength')">
+                                                    Mobile number must be at least 10 characters long
+                                                </mat-error>
+                                                <mat-error *ngIf="studentForm.get('contact')?.hasError('maxlength')">
+                                                    Mobile number cannot be more than 10 characters long
+                                                </mat-error>
+                                                <mat-error *ngIf="studentForm.get('contact')?.hasError('pattern')">
+                                                    Mobile number must contain only digits
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
-                                                <mat-label>City</mat-label>
-                                                <input matInput type="text">
+                                                <mat-label>City/Town</mat-label>
+                                                <input matInput type="text" formControlName="city">
+                                                <mat-error
+                                                    *ngIf="studentForm.get('city')?.hasError('required') && studentForm.get('city')?.touched">
+                                                    City/Town is required
+                                                </mat-error>
+                                                <mat-error *ngIf="studentForm.get('city')?.hasError('maxlength')">
+                                                    Maximum 50 characters allowed for city/town
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Message</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="message">
+                                                <mat-error
+                                                    *ngIf="studentForm.get('message')?.hasError('required') && studentForm.get('message')?.touched">
+                                                    Message is required
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="studentForm.get('message')?.hasError('pattern') && studentForm.get('message')?.touched">
+                                                    Please enter a valid message (only letters and spaces are allowed)
+                                                </mat-error>
                                             </mat-form-field>
                                         </div>
                                         <div>
-                                            <button type="submit" mat-raised-button
-                                                class="submit-button">Submit</button>
+                                            <button class="submit-button" mat-raised-button type="submit"
+                                                [disabled]="!studentForm.valid">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -104,7 +154,11 @@
                                 <div class="row">
                                     <div class=" col-10 offset-1 dark-red-color min-height">
                                         <h2>SANFORD ALMANAC</h2>
-                                        <p>The Almanac is the complete guide for school practices and regulations, having details regarding school fee, annual calendar, etc. and is given to each student. Parents are advised to see the almanac on regular basis as it may work as the effective mode of communication between the parents and the school.</p>
+                                        <p>The Almanac is the complete guide for school practices and regulations,
+                                            having details regarding school fee, annual calendar, etc. and is given to
+                                            each student. Parents are advised to see the almanac on regular basis as it
+                                            may work as the effective mode of communication between the parents and the
+                                            school.</p>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +166,9 @@
                                 <div class="row">
                                     <div class=" col-10 offset-1 dark-yellow-color min-height">
                                         <h2>UNIFORM</h2>
-                                        <p>In order to create the sense of equality and discipline amongst children SANFORD students comes in specially designed colorful uniform. It also gives them unique identification. School uniform is available in the school.</p>
+                                        <p>In order to create the sense of equality and discipline amongst children
+                                            SANFORD students comes in specially designed colorful uniform. It also gives
+                                            them unique identification. School uniform is available in the school.</p>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +176,10 @@
                                 <div class="row">
                                     <div class=" col-10 offset-1 dark-green-color min-height">
                                         <h2>SCHOOL TRANSPORT</h2>
-                                        <p>The school provides transport facility to children. Though adequate measures are taken to ensure safety of the children. The school is not responsible for any mishap or injury, which may occur in and around the school or in the transport.</p>
+                                        <p>The school provides transport facility to children. Though adequate measures
+                                            are taken to ensure safety of the children. The school is not responsible
+                                            for any mishap or injury, which may occur in and around the school or in the
+                                            transport.</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +187,10 @@
                                 <div class="row">
                                     <div class=" col-10 offset-1 dark-skyblue-color min-height">
                                         <h2>CHANGE OF ADDRESS</h2>
-                                        <p>The school provides transport facility to children. Though adequate measures are taken to ensure safety of the children. The school is not responsible for any mishap or injury, which may occur in and around the school or in the transports.</p>
+                                        <p>The school provides transport facility to children. Though adequate measures
+                                            are taken to ensure safety of the children. The school is not responsible
+                                            for any mishap or injury, which may occur in and around the school or in the
+                                            transports.</p>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +198,8 @@
                                 <div class="row">
                                     <div class=" col-10 offset-1 dark-pink-color min-height">
                                         <h2>WITHDRAWAL</h2>
-                                        <p>One month written notice is required to withdraw the child from the school and on withdrawal no amount would be refunded in any case.</p>
+                                        <p>One month written notice is required to withdraw the child from the school
+                                            and on withdrawal no amount would be refunded in any case.</p>
                                     </div>
                                 </div>
                             </div>
@@ -149,12 +212,19 @@
                     <h2 class="text-center">TRANSFER <span>POLICY</span></h2>
                     <div class="row">
                         <div class="col-12 col-lg-6 offset-lg-3">
-                            <p class="text-center">As per the standard policies of SANFORD if a child is getting transferred from one branch to another branch in
-                                that situation both the branches have to follow the certain necessary steps, which are as follows:</p>
-                            <p>1. A transfer application has to be given to both transferors as well as transferee branch 15 days prior to the transfer.</p>
-                            <p>2. Mid-term transfers involve the sharing of information & documentation from one branch to another through the coordinators.</p>
-                            <p>3. In case of transfer of student from one branch to another branch of SANFORD, the Annual Charges, Activity Charges, Tuition Fee and other charges of the new branch will be applicable.</p>
-                            <p>4. Parents have to pay the tuition fee& other charges as applicable in the new branch.</p>
+                            <p class="text-center">As per the standard policies of SANFORD if a child is getting
+                                transferred from one branch to another branch in
+                                that situation both the branches have to follow the certain necessary steps, which are
+                                as follows:</p>
+                            <p>1. A transfer application has to be given to both transferors as well as transferee
+                                branch 15 days prior to the transfer.</p>
+                            <p>2. Mid-term transfers involve the sharing of information & documentation from one branch
+                                to another through the coordinators.</p>
+                            <p>3. In case of transfer of student from one branch to another branch of SANFORD, the
+                                Annual Charges, Activity Charges, Tuition Fee and other charges of the new branch will
+                                be applicable.</p>
+                            <p>4. Parents have to pay the tuition fee& other charges as applicable in the new branch.
+                            </p>
                         </div>
                     </div>
                 </div>

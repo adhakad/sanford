@@ -53,38 +53,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   streamMainSubject: any[] = ['Mathematics(Science)', 'Biology(Science)', 'History(Arts)', 'Sociology(Arts)', 'Political Science(Arts)', 'Accountancy(Commerce)', 'Economics(Commerce)', 'Agriculture', 'Home Science'];
   cls: number = 0;
 
-  // ModulesList: any = [{
-  //   label: 'User',
-  //   children: [{
-  //     label: 'User 1',
-  //   }, {
-  //     label: 'User 2',
-  //   }, {
-  //     label: 'User 3'
-  //   }, {
-  //     label: 'User 4'
-  //   }]
-  // }, {
-  //   label: 'Management',
-  //   children: [{
-  //     label: 'Management 1',
-  //   }]
-  // }, {
-  //   label: 'Admin',
-  //   children: [{
-  //     label: 'Admin 1'
-  //   }, {
-  //     label: 'Admin 2'
-  //   }, {
-  //     label: 'Admin 3'
-  //   }, {
-  //     label: 'Admin 4'
-  //   }]
-  // }];
-
-
   constructor(private fb: FormBuilder, private notificationService: NotificationService, private cookieService: CookieService, private classService: ClassService, private adminAuthService: AdminAuthService, private teacherAuthService: TeacherAuthService, private studentAuthService: StudentAuthService, private studentService: StudentService,) {
-    // this.modulesList = this.ModulesList;
     this.studentForm = this.fb.group({
       _id: [''],
       session: ['', Validators.required],
@@ -191,7 +160,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   viewNotification() {
     if (this.notification) {
-      console.log(this.notification);
       let data: any = [];
       if (this.notificationCookie) {
         let filterNotification = this.notification.filter(({ _id: id1 }: any) => !this.notificationCookie.some(({ _id: id2 }: any) => id2 === id1));

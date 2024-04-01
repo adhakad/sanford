@@ -290,19 +290,19 @@ let CreateStudent = async (req, res, next) => {
 let CreateStudentAdmissionEnquiry = async (req, res, next) => {
     const currentDateIst = DateTime.now().setZone('Asia/Kolkata');
     const doae = currentDateIst.toFormat('dd-MM-yyyy');
-    let { session,name, contact, city,message } = req.body;
+    let { name,email, contact, city,message } = req.body;
     
     const studentData = {
-        session,name, contact, city,message, doae: doae
+        name,email, contact, city,message, doae: doae
     }
     try {
         const checkContact = await AdmissionEnquiryModel.findOne({ name: name, contact: contact });
         if (checkContact) {
-            return res.status(400).json(`Name: ${name} phone ${contact} is already fill online admission form, please visit school and confirm your admission !`);
+            return res.status(400).json(`Name - ${name} phone ${contact} is already fill online admission enquiry, please visit school and confirm your admission !`);
         }
         let createAdmissionEnquiryModel = await AdmissionEnquiryModel.create(studentData);
         if (createAdmissionEnquiryModel) {
-            return res.status(200).json({ successMsg: 'Online admission form submited successfully.' });
+            return res.status(200).json({ successMsg: 'Admission enquiry submited successfully.' });
         }
     } catch (error) {
         return res.status(500).json('Internal Server Error !');
