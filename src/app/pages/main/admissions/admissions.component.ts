@@ -39,6 +39,7 @@ export class AdmissionsComponent implements OnInit {
           this.errorCheck = false;
           this.errorMsg = '';
           if (this.errorCheck == false && this.errorMsg == '') {
+            this.studentForm.reset();
             this.successMsg = res.successMsg;
           }
         }

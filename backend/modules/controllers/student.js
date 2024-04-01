@@ -302,7 +302,7 @@ let CreateStudentAdmissionEnquiry = async (req, res, next) => {
         }
         let createAdmissionEnquiryModel = await AdmissionEnquiryModel.create(studentData);
         if (createAdmissionEnquiryModel) {
-            return res.status(200).json({ successMsg: 'Admission enquiry submited successfully.' });
+            return res.status(200).json({ successMsg: 'Admission enquiry submitted successfully.' });
         }
     } catch (error) {
         return res.status(500).json('Internal Server Error !');

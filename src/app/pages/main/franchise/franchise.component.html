@@ -19,50 +19,110 @@
                             <div class="col-lg-9 offset-lg-1">
                                 <div class="admission-form text-center">
                                     <h3>FRANCHISE ENQUIRY</h3>
-                                    <form>
+                                    <form [formGroup]="franchiseForm" (ngSubmit)="franchiseAddUpdate()">
                                         <div class="row">
+                                            <div *ngIf="successMsg && !errorCheck">
+                                                <p class="success-message">{{successMsg}}</p>
+                                            </div>
+                                            <div *ngIf="errorCheck && !successMsg">
+                                                <p class="error-message">{{errorMsg}}</p>
+                                            </div>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Name</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="name">
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('name')?.hasError('required') && franchiseForm.get('name')?.touched">
+                                                    Name is required
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('name')?.hasError('pattern') && franchiseForm.get('name')?.touched">
+                                                    Please enter a valid Name (only letters and spaces are allowed)
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Email</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="email">
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('email')?.hasError('required') && franchiseForm.get('email')?.touched">
+                                                    Email is required
+                                                </mat-error>
+                                                <mat-error *ngIf="franchiseForm.get('email')?.hasError('email')">
+                                                    Invalid email format
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Mobile</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="number" formControlName="contact">
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('contact')?.hasError('required') && franchiseForm.get('contact')?.touched">
+                                                    Mobile number is required
+                                                </mat-error>
+                                                <mat-error *ngIf="franchiseForm.get('contact')?.hasError('minlength')">
+                                                    Mobile number must be at least 10 characters long
+                                                </mat-error>
+                                                <mat-error *ngIf="franchiseForm.get('contact')?.hasError('maxlength')">
+                                                    Mobile number cannot be more than 10 characters long
+                                                </mat-error>
+                                                <mat-error *ngIf="franchiseForm.get('contact')?.hasError('pattern')">
+                                                    Mobile number must contain only digits
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Select State</mat-label>
-                                                <mat-select type="text" matInput>
+                                                <mat-select type="text" matInput formControlName="state">
                                                     <div *ngFor="let state of indianStates">
                                                         <mat-option value="{{state}}">{{state}}</mat-option>
                                                     </div>
                                                 </mat-select>
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('state')?.hasError('required') && franchiseForm.get('state')?.touched">
+                                                    State is required
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
-                                                <mat-label>City</mat-label>
-                                                <input matInput type="text">
+                                                <mat-label>City/Town</mat-label>
+                                                <input matInput type="text" formControlName="city">
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('city')?.hasError('required') && franchiseForm.get('city')?.touched">
+                                                    City/Town is required
+                                                </mat-error>
+                                                <mat-error *ngIf="franchiseForm.get('city')?.hasError('maxlength')">
+                                                    Maximum 50 characters allowed for city/town
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Select Investement</mat-label>
-                                                <mat-select type="text" matInput>
+                                                <mat-select type="text" matInput formControlName="investment">
                                                     <div>
-                                                        <mat-option>5 Lacs - 10 Lacs Onwards</mat-option>
-                                                        <mat-option>25 Lacs - 50 Lacs Onwards</mat-option>
-                                                        <mat-option>50 Lacs - 1 Cr. Onwards</mat-option>
+                                                        <mat-option value="5 lakhs - 10 lakhs">5 lakhs - 10 lakhs
+                                                            Onwards</mat-option>
+                                                        <mat-option value="25 lakhs - 50 lakhs">25 lakhs - 50 lakhs
+                                                            Onwards</mat-option>
+                                                        <mat-option value="50 lakhs - 1 Crore">50 lakhs - 1 Crore
+                                                            Onwards</mat-option>
                                                     </div>
                                                 </mat-select>
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('investment')?.hasError('required') && franchiseForm.get('investment')?.touched">
+                                                    Investment is required
+                                                </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline">
                                                 <mat-label>Message</mat-label>
-                                                <input matInput type="text">
+                                                <input matInput type="text" formControlName="message">
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('message')?.hasError('required') && franchiseForm.get('message')?.touched">
+                                                    Message is required
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="franchiseForm.get('message')?.hasError('pattern') && franchiseForm.get('message')?.touched">
+                                                    Please enter a valid message (only letters and spaces are allowed)
+                                                </mat-error>
                                             </mat-form-field>
                                         </div>
                                         <div>
-                                            <button type="submit" mat-raised-button
-                                                class="submit-button">Submit</button>
+                                            <button class="submit-button" mat-raised-button type="submit"
+                                                [disabled]="!franchiseForm.valid">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -73,16 +133,19 @@
                     <div class="container-fluid padding-top franchise">
                         <div class="row">
                             <div class="col-12  col-lg-4 offset-lg-1 title">
-                                <h4>Delhi NCR</h4>
+                                <h4>Rajsthan</h4>
                                 <h5><span>Space:</span> Minimum requirement 2500 sq ft space preferably on ground floor
                                     with some open space in prime residential area.</h5>
-                                <h5><span>Investment: </span>Rs. 15 lakhs onwards.</h5>
+                                <h5><span>Investment Category's:</span></h5>
+                                <h5>(1). Rs. 5 lakhs - 10 lakhs onwards</h5>
+                                <h5>(2). Rs. 25 lakhs - 50 lakhs onwards</h5>
+                                <h5>(3). Rs. 50 lakhs - 1 Crore onwards</h5>
                             </div>
                             <div class="col-9 offset-3 col-lg-4 offset-lg-3">
                                 <img src="../../../../assets/c3.jpg" alt="">
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-9 offset-3 col-lg-4 offset-lg-2">
                                 <img src="../../../../assets/c2.jpg" alt="">
                             </div>
@@ -92,7 +155,7 @@
                                     with some open space in prime residential area.</h5>
                                 <h5><span>Investment: </span>Rs. 15 lakhs onwards.</h5>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -146,10 +209,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-green-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-green-color text-center">
                                                 <mat-icon>file_map</mat-icon>
-                                            <h3>Initial Support</h3>
-                                            
+                                                <h3>Initial Support</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -159,10 +223,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-red-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-red-color text-center">
                                                 <mat-icon>corporate_fare</mat-icon>
-                                            <h3>Infrastructure Support</h3>
-                                            
+                                                <h3>Infrastructure Support</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -172,10 +237,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-blue-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-blue-color text-center">
                                                 <mat-icon>school</mat-icon>
-                                            <h3>Academic Support</h3>
-                                            
+                                                <h3>Academic Support</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -185,10 +251,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-yellow-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-yellow-color text-center">
                                                 <mat-icon>diversity_3</mat-icon>
-                                            <h3>Recruitment & Training</h3>
-                                            
+                                                <h3>Recruitment & Training</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -198,10 +265,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-blue-color text-center">
-                                                <mat-icon>local_convenience_store                                                </mat-icon>
-                                            <h3>Markting Support</h3>
-                                            
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-blue-color text-center">
+                                                <mat-icon>local_convenience_store </mat-icon>
+                                                <h3>Markting Support</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -211,10 +279,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-yellow-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-yellow-color text-center">
                                                 <mat-icon>local_shipping</mat-icon>
-                                            <h3>Logistic Support</h3>
-                                            
+                                                <h3>Logistic Support</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -224,10 +293,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-red-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-red-color text-center">
                                                 <mat-icon>content_paste_search</mat-icon>
-                                            <h3>Quality Control & Audit</h3>
-                                            
+                                                <h3>Quality Control & Audit</h3>
+
                                             </div>
                                         </div>
                                     </div>
@@ -237,10 +307,11 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-8 offset-lg-2">
                                         <div class="row" style="padding: 5px !important;">
-                                            <div class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-green-color text-center">
+                                            <div
+                                                class="col-10 offset-1 col-lg-10 offset-lg-1 support-card dark-green-color text-center">
                                                 <mat-icon>language</mat-icon>
-                                            <h3>IT Support</h3>
-                                            
+                                                <h3>IT Support</h3>
+
                                             </div>
                                         </div>
                                     </div>

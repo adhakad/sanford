@@ -2,11 +2,6 @@
 const mongoose = require('mongoose');
 
 const FranchiseEnquiryModel = mongoose.model('Franchise-enquiry', {
-    session: {
-        type: String,
-        required: true,
-        trim: true,
-    },
     name: {
         type: String,
         required: true,
@@ -32,8 +27,8 @@ const FranchiseEnquiryModel = mongoose.model('Franchise-enquiry', {
         required: true,
         trim: true,
     },
-    investement:{
-        type: Number,
+    investment:{
+        type: String,
         required: true,
         trim: true,
     },

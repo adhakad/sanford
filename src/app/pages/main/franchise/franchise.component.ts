@@ -1,6 +1,9 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 declare var jQuery: any;
 import { isPlatformBrowser } from '@angular/common';
+import { FranchiseEnquiryService } from 'src/app/services/franchise-enquiry.service';
+
 
 @Component({
   selector: 'app-franchise',
@@ -9,6 +12,10 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class FranchiseComponent implements OnInit {
   private isBrowser: boolean = isPlatformBrowser(this.platformId);
+  franchiseForm: FormGroup;
+  successMsg: String = '';
+  errorMsg: String = '';
+  errorCheck: Boolean = false;
   loader: Boolean = true;
   indianStates: string[] = [
     'Andhra Pradesh',
@@ -40,8 +47,20 @@ export class FranchiseComponent implements OnInit {
     'Uttarakhand',
     'West Bengal'
   ];
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,) { }
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private fb: FormBuilder, private franchiseEnquiryService: FranchiseEnquiryService) {
+    this.franchiseForm = this.fb.group({
+      _id: [''],
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z\\s]+$')]],
+      contact: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^\d+$/)]],
+      email: ['', [Validators.required, Validators.email]],
+      state: ['', [Validators.required]],
+      city: ['', [Validators.required, Validators.maxLength(50)]],
+      investment: ['', [Validators.required]],
+      message: ['', [Validators.required, Validators.pattern('^[a-zA-Z\\s]+$')]],
+
+    })
+  }
   ngOnInit(): void {
     setTimeout(() => {
       this.loader = false;
@@ -52,7 +71,7 @@ export class FranchiseComponent implements OnInit {
     if (this.isBrowser) {
 
       setTimeout(() => {
-        
+
         jQuery('.award-carousel').owlCarousel({
           items: 2,
           loop: true,
@@ -82,6 +101,28 @@ export class FranchiseComponent implements OnInit {
         }, 500)
       }, 3000);
     }
+  }
+
+
+  franchiseAddUpdate() {
+    if (this.franchiseForm.valid) {
+      this.franchiseEnquiryService.addFranchiseEnquiry(this.franchiseForm.value).subscribe((res: any) => {
+        if (res) {
+          this.errorCheck = false;
+          this.errorMsg = '';
+          if (this.errorCheck == false && this.errorMsg == '') {
+            this.franchiseForm.reset();
+            this.successMsg = res.successMsg;
+          }
+        }
+      }, (err: any) => {
+        this.successMsg = '';
+        if (this.successMsg == '') {
+          this.errorCheck = true;
+          this.errorMsg = err.error;
+        }
+      })
     }
+  }
 
 }
