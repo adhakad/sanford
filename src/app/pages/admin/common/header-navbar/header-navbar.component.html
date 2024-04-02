@@ -90,7 +90,7 @@
       <mat-icon>wallpaper</mat-icon>
       <span>Banners</span>
     </button>
-    <button mat-menu-item class="menu-button" [routerLink]="['/admin/topper']" routerLinkActive="active-link">
+    <!-- <button mat-menu-item class="menu-button" [routerLink]="['/admin/topper']" routerLinkActive="active-link">
       <mat-icon>school</mat-icon>
       <span>Toppers</span>
     </button>
@@ -102,7 +102,7 @@
       <mat-icon>desktop_mac
       </mat-icon>
       <span>Ads</span>
-    </button>
+    </button> -->
     <button mat-menu-item class="menu-button" *ngIf="isAdminAuthenticated" (click)="onLogout('admin')">
       <mat-icon>logout</mat-icon>
       <span>Logout</span>

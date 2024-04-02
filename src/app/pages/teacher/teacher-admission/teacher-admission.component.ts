@@ -67,7 +67,7 @@ export class TeacherAdmissionComponent implements OnInit {
       name: ['', [Validators.required, Validators.pattern('^[a-zA-Z\\s]+$')]],
       dob: ['', Validators.required],
       aadharNumber:['',[Validators.required, Validators.pattern('^\\d{12}$')]],
-      samagraId:['',[Validators.required, Validators.pattern('^\\d{9}$')]],
+      janAadharNumber:['',[Validators.required, Validators.pattern('^\\d{10}$')]],
       udiseNumber:['', [ Validators.pattern('^\\d{11}$')]],
       bankAccountNo:['', [ Validators.minLength(9),Validators.maxLength(18), Validators.pattern('^[0-9]+$')]],
       bankIfscCode:['', [Validators.minLength(11),Validators.maxLength(11)]],

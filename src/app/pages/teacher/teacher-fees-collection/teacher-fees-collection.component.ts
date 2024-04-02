@@ -50,7 +50,7 @@ export class TeacherFeesCollectionComponent implements OnInit {
   receiptInstallment: any = {};
   receiptMode: boolean = false;
   teacherInfo:any;
-  collectedBy:String='';
+  createdBy:String='';
   loader:Boolean=true;
   constructor(private fb: FormBuilder, public activatedRoute: ActivatedRoute,private teacherAuthService:TeacherAuthService,private teacherService:TeacherService, private schoolService: SchoolService, private printPdfService: PrintPdfService, private feesService: FeesService, private feesStructureService: FeesStructureService) {
     this.feesForm = this.fb.group({
@@ -58,7 +58,7 @@ export class TeacherFeesCollectionComponent implements OnInit {
       studentId: [''],
       feesAmount: [''],
       feesInstallment: [''],
-      collectedBy:[''],
+      createdBy:[''],
     });
   }
 
@@ -78,7 +78,7 @@ export class TeacherFeesCollectionComponent implements OnInit {
   getTeacherById(id:string){
     this.teacherService.getTeacherById(id).subscribe((res:any)=> {
       if(res){
-        this.collectedBy = `${res.name} (${res.teacherUserId})`;
+        this.createdBy = `${res.name} (${res.teacherUserId})`;
       }
 
     })
@@ -233,7 +233,7 @@ export class TeacherFeesCollectionComponent implements OnInit {
         })
       } else {
         this.feesForm.value.class = this.singleStudent.class;
-        this.feesForm.value.collectedBy = this.collectedBy;
+        this.feesForm.value.createdBy = this.createdBy;
         this.feesForm.value.studentId = this.singleStudent.studentId;
         this.feesForm.value.feesInstallment = this.paybleInstallment[0][0];
         this.feesForm.value.feesAmount = this.paybleInstallment[0][1];

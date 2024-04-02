@@ -111,9 +111,9 @@
                                                     (click)="feeReceipt(fee.installment)">launch</mat-icon>
                                             </td>
                                             <td>
-                                                <span *ngIf="fee.collectedBy==0">-</span>
-                                                <span *ngIf="fee.collectedBy!==0 && collectBy==fee.collectedBy">{{ fee.collectedBy }}</span>
-                                                <span *ngIf="fee.collectedBy!==0 && collectBy !==fee.collectedBy">Other</span>
+                                                <span *ngIf="fee.createdBy==0">-</span>
+                                                <span *ngIf="fee.createdBy!==0 && collectBy==fee.createdBy">{{ fee.createdBy }}</span>
+                                                <span *ngIf="fee.createdBy!==0 && collectBy !==fee.createdBy">Other</span>
                                             </td>
                                         </tr>
                                     </ng-container>

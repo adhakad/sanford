@@ -6,10 +6,10 @@
                     <div class="col-12 col-lg-12 footer-item">
                         <img src="../../../assets/logo.png" alt="" width="80%" style="margin-bottom: 25px;">
                         <h3>{{schoolName}}</h3>
-                        <p style="display: inline;">National park colony,
-                            Chhabra, Rajasthan
-                            (India) 325220</p>
-                        <!-- <p>{{schoolInfo?.board}} Affiliation - {{schoolInfo?.affiliationNumber}}</p> -->
+                        <p style="display: inline;">{{schoolInfo?.street}},
+                            {{schoolInfo?.city}}, {{schoolInfo?.state}}
+                            ({{schoolInfo?.country}}) {{schoolInfo?.pinCode}}</p>
+                        <p>{{schoolInfo?.board}} Affiliation - {{schoolInfo?.affiliationNumber}}</p>
                     </div>
                 </div>
             </div>
@@ -34,19 +34,19 @@
                         <div class="row">
                             <div class="col-1"><mat-icon>call</mat-icon></div>
                             <div class="col-11">
-                                <p style="margin-top: 3px !important;margin-left: 10px;">9511338506</p>
+                                <p style="margin-top: 3px !important;margin-left: 10px;">{{schoolInfo?.phoneOne}}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-1"><mat-icon>smartphone</mat-icon></div>
                             <div class="col-11">
-                                <p style="margin-top: 3px !important;margin-left: 10px;">7568368506</p>
+                                <p style="margin-top: 3px !important;margin-left: 10px;">{{schoolInfo?.phoneSecond}}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-1"><mat-icon>mail</mat-icon></div>
                             <div class="col-11">
-                                <p style="margin-top: 3px !important;margin-left: 10px;">sanfordworldschool01@gmail.com</p>
+                                <p style="margin-top: 3px !important;margin-left: 10px;">{{schoolInfo?.email}}</p>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">

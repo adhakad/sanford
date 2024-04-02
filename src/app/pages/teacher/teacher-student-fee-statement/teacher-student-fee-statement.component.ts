@@ -112,7 +112,7 @@ export class TeacherStudentFeeStatementComponent implements OnInit {
       const installment = Object.keys(this.studentFeesCollection.installment[i])[0];
       const paidAmount:any = Object.values(this.studentFeesCollection.installment[i])[0];
       const paymentDate = Object.values(this.studentFeesCollection.paymentDate[i])[0];
-      const collectedBy = Object.values(this.studentFeesCollection.collectedBy[i])[0];
+      const createdBy = Object.values(this.studentFeesCollection.createdBy[i])[0];
       allPaidAmount += paidAmount;
       this.processedData.push({
         allPaidAmount,
@@ -120,7 +120,7 @@ export class TeacherStudentFeeStatementComponent implements OnInit {
         installment,
         paidAmount,
         paymentDate,
-        collectedBy
+        createdBy
       });
     }
     setTimeout(()=>{

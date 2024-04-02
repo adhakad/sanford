@@ -11,18 +11,20 @@
             <div class="row">
               <div class="col-12 col-lg-4">
                 <div class="contact-card light-yellow-color text-center">
-                  <h4>National park colony, Chhabra, Baran Rajasthan-325220</h4>
+                  <h4>{{schoolInfo?.street}},
+                    {{schoolInfo?.city}},{{schoolInfo?.district}}, {{schoolInfo?.state}}
+                    ({{schoolInfo?.country}}) {{schoolInfo?.pinCode}}</h4>
                 </div>
               </div>
               <div class="col-12 col-lg-4">
                 <div class="contact-card light-skyblue-color text-center">
-                  <h4>Ph. : +91-9511338506</h4>
-                  <h4>Ph. : +91-7568368506</h4>
+                  <h4>Ph. : {{schoolInfo?.phoneOne}}</h4>
+                  <h4>Ph. : {{schoolInfo?.phoneSecond}}</h4>
                 </div>
               </div>
               <div class="col-12 col-lg-4">
                 <div class="contact-card light-pink-color text-center">
-                  <h4>sanfordworldschool01@gmail.com</h4>
+                  <h4>{{schoolInfo?.email}}</h4>
                 </div>
               </div>
             </div>

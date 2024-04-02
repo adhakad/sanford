@@ -85,7 +85,7 @@
                         *ngIf="students.status == 'Inactive'" href="javascript:void(0)">{{students.status}}</a>
                     </td>
                     <!-- <td>
-                      <button style="background-color: transparent;color: #4881dc;border: 1px solid #4881dc;"
+                      <button style="background-color: transparent;color: #8d6dff;border: 1px solid #8d6dff;"
                         class="submit-button" (click)="addStudentClassPromoteModel(students)"
                         mat-raised-button>Promote</button>
                     </td> -->
@@ -304,14 +304,14 @@
                             <div class="col-12 col-lg-6">
                               <mat-form-field appearance="outline">
                                 <mat-label>Samagra Id</mat-label>
-                                <input matInput type="number" formControlName="samagraId">
+                                <input matInput type="number" formControlName="janAadharNumber">
                                 <mat-error
-                                  *ngIf="studentForm.get('samagraId')?.hasError('required') && studentForm.get('samagraId')?.touched">
+                                  *ngIf="studentForm.get('janAadharNumber')?.hasError('required') && studentForm.get('janAadharNumber')?.touched">
                                   Samagra id is required
                                 </mat-error>
                                 <mat-error
-                                  *ngIf="studentForm.get('samagraId')?.hasError('pattern') && studentForm.get('samagraId')?.touched">
-                                  Samagra id must be a 9-digit number
+                                  *ngIf="studentForm.get('janAadharNumber')?.hasError('pattern') && studentForm.get('janAadharNumber')?.touched">
+                                  Samagra id must be a 10-digit number
                                 </mat-error>
                               </mat-form-field>
                             </div>
@@ -773,7 +773,7 @@
                         <div class="row">
                           <ng-container *ngIf="singleStudentInfo">
                             <ng-container>
-                              <h3 style="color: #4881dc;">Academic Info</h3>
+                              <h3 style="color: #8d6dff;">Academic Info</h3>
                             </ng-container>
                             <div class="col-12 col-lg-6">
                               <p>Academic Session - {{singleStudentInfo.session}}</p>
@@ -796,7 +796,7 @@
                               <p>Stream - {{singleStudentInfo.stream}}</p>
                             </div>
                             <ng-container>
-                              <h3 style="color: #4881dc;">Student Info</h3>
+                              <h3 style="color: #8d6dff;">Student Info</h3>
                             </ng-container>
                             <div class="col-12 col-lg-6">
                               <p>Name - {{singleStudentInfo.name | titlecase}}</p>
@@ -808,7 +808,7 @@
                               <p>Aadhar Number - {{singleStudentInfo.aadharNumber}}</p>
                             </div>
                             <div class="col-12 col-lg-6">
-                              <p>Samagra Id - {{singleStudentInfo.samagraId}}</p>
+                              <p>Samagra Id - {{singleStudentInfo.janAadharNumber}}</p>
                             </div>
                             <div class="col-12 col-lg-6">
                               <p>Gender - {{singleStudentInfo.gender | titlecase}}</p>
@@ -838,7 +838,7 @@
                               <p>UDISE Number - {{singleStudentInfo.udiseNumber}}</p>
                             </div>
                             <ng-container>
-                              <h3 style="color: #4881dc;">Parent's Info</h3>
+                              <h3 style="color: #8d6dff;">Parent's Info</h3>
                             </ng-container>
                             <div class="col-12 col-lg-6">
                               <p>Father Name - {{singleStudentInfo.fatherName | titlecase}}</p>
