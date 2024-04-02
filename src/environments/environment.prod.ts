@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  API_URL: 'https://sanfordworldschool.com',
+  API_URL: 'http://localhost:3000',
   SCHOOL_NAME:'SANFORD WORLD SCHOOL',
 };

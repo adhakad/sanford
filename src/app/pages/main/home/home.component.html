@@ -6,10 +6,10 @@
             <button class="submit-button2" mat-raised-button routerLink="/admissions">Admission Enquiry</button>
             <div class="banner-background">
                 <div class="owl-carousel banner-carousel">
-                    <img class="banner-card" src="../../../../assets/banner1.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/banner2.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/banner3.jpg" alt="">
-                    <img class="banner-card" src="../../../../assets/banner4.jpg" alt="">
+                    <div *ngFor="let bannerInfo of bannerInfo,let i = index">
+                        <img class="banner-card" src="{{baseUrl}}/public/banner-image/{{bannerInfo.image}}"
+                            alt="banner-{{i+1}}">
+                    </div>
                 </div>
             </div>
             <div class="container-fluid side-banner">

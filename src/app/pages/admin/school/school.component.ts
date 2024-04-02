@@ -40,7 +40,8 @@ export class SchoolComponent implements OnInit {
       facebookLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?facebook.com\/[a-zA-Z0-9(\.\?)?]/)]],
       linkedinLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?linkedin.com\/[a-zA-Z0-9(\.\?)?]/)]],
       instagramLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?instagram.com\/[a-zA-Z0-9(\.\?)?]/)]],
-      youtubeLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?youtube.com\/[a-zA-Z0-9(\.\?)?]/)]],
+      // youtubeLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?youtube.com\/[a-zA-Z0-9(\.\?)?]/)]],
+      youtubeLink: ['', [Validators.pattern(/^(https?:\/\/)?(www\.)?youtube\.com\/@?[a-zA-Z0-9_-]{1,}(\?\S*)?$/)]],
     })
   }
   ngOnInit(): void {
