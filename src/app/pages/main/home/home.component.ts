@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
         jQuery('.banner-carousel').owlCarousel({
           items: 1,
           autoplay: true,
-          autoplayTimeout: 5000,
+          autoplayTimeout: 3500,
           autoplayHoverPause: false,
           loop: true,
           dots: false,

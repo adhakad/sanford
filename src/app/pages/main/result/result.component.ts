@@ -128,15 +128,19 @@ export class ResultComponent implements OnInit {
               const practicalMark = practicalMarkObject ? parseFloat(practicalMarkObject[subjectName]) : 0;
               const totalMarks = theoryMarks + practicalMark;
 
-
+              const theoryMaxMarks = this.resultStructureInfo.theoryMaxMarks.find((theoryMaxMarks:any) => theoryMaxMarks.hasOwnProperty(subjectName))[subjectName];
+              const practicalMaxMarkObject = this.resultStructureInfo.practicalMaxMarks.find((practicalMaxMark: any) => Object.keys(practicalMaxMark)[0] === subjectName);
+              const practicalMaxMark = practicalMaxMarkObject ? parseFloat(practicalMaxMarkObject[subjectName]) : 0;
+              const totalMaxMark = parseFloat(theoryMaxMarks) + practicalMaxMark;
+              const totalGettingMarksPercentile = (totalMarks/totalMaxMark)*100;
+              const fixedTotalGettingMarksPercentile =  totalGettingMarksPercentile.toFixed(0)
               let grade = '';
               const gradeMaxMarks = this.resultStructureInfo.gradeMaxMarks;
               const gradeMinMarks = this.resultStructureInfo.gradeMinMarks;
-
               for (let i = 0; i < gradeMaxMarks.length; i++) {
                 const gradeRange: any = Object.values(gradeMaxMarks[i])[0];
-                if (totalMarks >= gradeMinMarks[i][Object.keys(gradeMinMarks[i])[0]] &&
-                  totalMarks <= gradeRange) {
+                if (fixedTotalGettingMarksPercentile >= gradeMinMarks[i][Object.keys(gradeMinMarks[i])[0]] &&
+                  fixedTotalGettingMarksPercentile <= gradeRange) {
                   grade = Object.keys(gradeMaxMarks[i])[0];
                   break;
                 }
@@ -150,7 +154,6 @@ export class ResultComponent implements OnInit {
               };
             })
           };
-
 
           grandTotalMarks = this.examResultInfo.marks.reduce((total: number, item: any) => {
             return total + item.totalMarks;
@@ -185,12 +188,8 @@ export class ResultComponent implements OnInit {
 
             return total + maxMarks;
           }, 0);
-
           const totalPracticalMaxMarks: number = 0;
-
           const totalMaxMarks: number = totalTheoryMaxMarks + totalPracticalMaxMarks;
-
-
           this.examResultInfo = {
             class: examResult.class,
             examType: examResult.examType,
